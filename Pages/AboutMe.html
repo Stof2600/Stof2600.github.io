@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stofs Website (About)</title>
+    <link rel="stylesheet" href="../StyleSheets/MainStyleSheet.css">
+    <link rel="stylesheet" href="../StyleSheets/AboutMeStyleSheet.css">
+</head>
+<body class="Back" onload="LoadRandomIcon('../MainImages'), SetMaxTabs(2)">
+
+<div class="Icon">
+    <img id="IconImage">
+</div>
+
+<div class="TopBar">
+    <h1 id="TopTitle">ABOUT ME</h1>
+    <div id="google_translate_element"></div>
+
+    <div id="TabHolder">
+        <h3 class="TabButton" onclick="SetCurrentTab(0)">PERSONAL INFO</h3>
+        <h3 class="TabButton" onclick="SetCurrentTab(1)">CONTACT INFO</h3>
+    </div>
+
+</div>
+
+<div class="SideBar">
+    <h2>PAGES</h2>
+
+    <h3 onclick="LoadPage('../index.html')" class="LinkText">MAIN PAGE</h3>
+    <h3 id="LoadedLinkText">ABOUT ME</h3>
+    <h3 onclick="LoadPage('../Pages/Projects.html')" class="LinkText">PROJECTS</h3>
+</div>
+
+<div id="TabBlock">
+    <div class="MainTab" id="Tab0">
+        <h1 class="MainCTitle">PERSONAL INFO</h1>
+
+        <div id="AboutMeMain">
+            <img id="MeImg" src="../MainImages/Icons/Wait.jpg">
+
+            <div id="AfterImgBlock">
+                <h2>STOF</h2>
+                <h3 class="NoSpaceText">My name is Stef Schouten, I am currently a student at SintLucas in Eindhoven for software development.</h3>
+                <h3 class="NoSpaceText">I've worked with a lot of programming languages already, this includes: c#, c, html and js.</h3>
+                <h3 class="NoSpaceText">I mostly work in Unity and have written multiple small games and demos of all different kinds (3D, 2D, VR, Mobile) and I make 3D models for these games myself in blender.</h3>
+                <br>
+                <h3 class="NoSpaceText">I also know the basics for web development, but I prefer to work on games or more complicated systems because I think those are both more important and more fun.</h3>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="MainTab" id="Tab1">
+        <h1 class="MainCTitle">CONTACT INFO</h1>
+
+        <div class="MainDesc">
+            <h2>EMAIL:</h2>
+            <h3>stof.schouten@gmail.com</h3>
+            <br>
+            <h2>PHONE:</h2>
+            <h3>don't contact me via phone</h3>
+        </div>
+    </div>
+</div>
+
+<script src="../Script/MainPageScript.js"></script>
+<script src="../Script/tabChange.js"></script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

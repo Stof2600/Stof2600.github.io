@@ -1,0 +1,26 @@
+.ProjectImgBox
+{
+    float: left;
+    margin-left: 125px;
+    margin-top: 10px;
+    width: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.ProjectImgBox > * {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    align-self: center;
+}
+
+.FeaturesText
+{
+    color: darkslategray;
+}
+
+.NoSpaceText
+{
+    margin-top: 1px;
+    margin-bottom: 1px;
+}

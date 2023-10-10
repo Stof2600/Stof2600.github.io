@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stofs Website (Main)</title>
+    <link rel="stylesheet" href="StyleSheets/MainStyleSheet.css">
+</head>
+<body class="Back" onload="LoadRandomIcon('MainImages'), OnloadPage()">
+
+<div class="Icon">
+    <img id="IconImage">
+</div>
+
+<div class="TopBar">
+    <h1 id="TopTitle">STOFS WEBSITE</h1>
+    <div id="google_translate_element"></div>
+
+    <h3 class="TopDesc">PORTFOLIO WEBSITE - STEF SCHOUTEN</h3>
+</div>
+
+<div class="SideBar">
+    <h2>PAGES</h2>
+
+    <h3 id="LoadedLinkText">MAIN PAGE</h3>
+    <h3 onclick="LoadPage('Pages/AboutMe.html')" class="LinkText">ABOUT ME</h3>
+    <h3 onclick="LoadPage('Pages/Projects.html')" class="LinkText">PROJECTS</h3>
+</div>
+
+<div class="MainTab">
+    <h3 class="MainCTitle">MOST RECENT PROJECT:</h3>
+    <h1 class="MainCTitle">THIS WEBSITE</h1>
+
+    <h3 class="MainDesc">The current project im working on is this portfolio website.<br>The latest changes are to the projects page</h3>
+    <img id="MainImage" src="MainImages/RecentProj.png">
+</div>
+
+<script src="Script/MainPageScript.js"></script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
