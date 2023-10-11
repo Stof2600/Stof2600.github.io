@@ -18,6 +18,16 @@
     margin-top: -10px;
 }
 
+#AboutMeText
+{
+    font-family: Arial, Serif;
+    color: grey;
+    float: left;
+    width: auto;
+    margin-top: -10px;
+    margin-left: 10px;
+}
+
 .NoSpaceText
 {
     margin-top: 1px;
