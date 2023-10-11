@@ -1,0 +1,35 @@
+#AboutMeMain
+{
+    width: 100%;
+}
+
+#MeImg
+{
+    float: left;
+    margin: 10px;
+}
+
+#AfterImgBlock
+{
+    font-family: Arial, Serif;
+    color: grey;
+    float: left;
+    width: 1000px;
+    margin-top: -10px;
+}
+
+#AboutMeText
+{
+    font-family: Arial, Serif;
+    color: grey;
+    float: left;
+    width: auto;
+    margin-top: -10px;
+    margin-left: 10px;
+}
+
+.NoSpaceText
+{
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
