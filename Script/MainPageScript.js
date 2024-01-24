@@ -8,7 +8,7 @@ function OnloadPage()
 
 function LoadRandomIcon(StartPath)
 {
-    let Path = StartPath + "/Icons/"
+    /*let Path = StartPath + "/Icons"
 
     let R = Math.random();
     let  SelectedImage = "MainImages/Icons/Ky.jpg"
@@ -44,9 +44,9 @@ function LoadRandomIcon(StartPath)
     else
     {
         SelectedImage = Path + "wuh_huh.jpg"
-    }
+    }*/
 
-    document.getElementById("IconImage").src = SelectedImage;
+    document.getElementById("IconImage").src = StartPath + "/Icons/Wait.jpg";
 }
 
 function LoadPage(PagePath)
