@@ -1,2 +1,0 @@
-icons (200 x 200)
-Full screen capture (scale down to 20%)
