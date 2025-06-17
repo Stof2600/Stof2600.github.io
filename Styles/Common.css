@@ -40,7 +40,7 @@ h1
 {
 	grid-area : menu;
 	text-align : center;
-	height : 73vh;
+	height : 40vh;
 }
 .grid > div.content
 {
