@@ -1,9 +1,6 @@
 body
 {
 	background-color : black;
-	height : 98%;
-	padding : 0;
-	margin : 0;
 }
 h1
 {
@@ -17,11 +14,9 @@ h1
 	grid-template-areas:
 		"icon title"
 		"menu content";
-	grid-template-columns: 1fr 10fr;
-	gap: 20px;
+	grid-template-columns: 1fr 9fr;
+	gap: 10px;
 	background-color: black;
-
-	margin : 10px
 }
 
 .grid > div
@@ -45,8 +40,7 @@ h1
 {
 	grid-area : menu;
 	text-align : center;
-
-	height : 72vh;
+	height : 73vh;
 }
 .grid > div.content
 {
