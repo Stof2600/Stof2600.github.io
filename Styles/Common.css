@@ -17,7 +17,7 @@ h1
 	grid-template-areas:
 		"icon title"
 		"menu content";
-	grid-template-columns: 1fr 7fr;
+	grid-template-columns: 1fr 9fr;
 	gap: 20px;
 	background-color: black;
 
@@ -26,17 +26,17 @@ h1
 
 .grid > div
 {
-	border-style : solid;
-	border-color : blue;
+	border : 5px solid blue;
+	border-radius : 7px; 
 	background-color: black;
 	color : white;
 
-	padding : 80px
+	//padding : 80px
 }
 
 .grid > div.icon
 {
-
+	
 }
 .grid > div.title
 {
@@ -46,13 +46,11 @@ h1
 .grid > div.menu
 {
 	grid-area : menu;
-	height : 100%
+	text-align : center;
 }
 .grid > div.content
 {
 	grid-area : content;
 	border-style : none;
 	border-color : black;
-
-	height : 100%
 }
