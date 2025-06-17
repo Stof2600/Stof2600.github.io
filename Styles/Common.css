@@ -1,0 +1,58 @@
+body
+{
+	background-color : black;
+	height : 98%;
+	padding : 0;
+	margin : 0;
+}
+h1
+{
+	color : white;
+}
+
+
+.grid
+{
+	display: grid;
+	grid-template-areas:
+		"icon title"
+		"menu content";
+	grid-template-columns: 1fr 7fr;
+	gap: 20px;
+	background-color: black;
+
+	margin : 10px
+}
+
+.grid > div
+{
+	border-style : solid;
+	border-color : blue;
+	background-color: black;
+	color : white;
+
+	padding : 80px
+}
+
+.grid > div.icon
+{
+
+}
+.grid > div.title
+{
+	grid-area : header;
+	text-align : center;
+}
+.grid > div.menu
+{
+	grid-area : menu;
+	height : 100%
+}
+.grid > div.content
+{
+	grid-area : content;
+	border-style : none;
+	border-color : black;
+
+	height : 100%
+}
