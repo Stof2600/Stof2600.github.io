@@ -1,13 +1,51 @@
+/*custom fonts*/
+@font-face
+{
+	font-family : TitleFont;
+	src : url("../Fonts/Megatech.ttf");
+}
+@font-face
+{
+	font-family : LinkFont;
+	src : url("../Fonts/Pixel.ttf");
+}
+
+/*main style*/
 body
 {
 	background-color : black;
+
+	/*block select*/
+	-webkit-user-select : none;
+	-ms-user-select : none;
+	user-select : none;
 }
 h1
 {
 	color : white;
+	font-family : "TitleFont";
+}
+h2
+{
+	color : white;
+	font-family : "TitleFont";
 }
 
+/*links*/
+.link
+{
+	font-family : "LinkFont";
+}
+a 
+{
+	color : white;
+}
+a:hover
+{
+	color : #5efc32;
+}
 
+/*UI layout*/
 .grid
 {
 	display: grid;
@@ -21,7 +59,7 @@ h1
 
 .grid > div
 {
-	border : 5px solid blue;
+	border : 5px solid #0043c9;
 	border-radius : 7px; 
 	background-color: black;
 	color : white;
@@ -33,7 +71,7 @@ h1
 }
 .grid > div.title
 {
-	grid-area : header;
+	grid-area : title;
 	text-align : center;
 }
 .grid > div.menu
