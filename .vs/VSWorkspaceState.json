@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Fonts",
+    "\\Img",
+    "\\Img\\Ico",
+    "\\Styles"
   ],
+  "SelectedNode": "\\about.html",
   "PreviewInSolutionExplorer": false
 }
