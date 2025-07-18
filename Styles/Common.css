@@ -79,7 +79,6 @@ a:hover
 .gameBox > .gameTitle
 {
 	margin-top : 5px;
-	margin-bottom : 0px;
 }
 .gameBox > .playButton
 {
@@ -90,7 +89,10 @@ a:hover
 .gameDesc
 {
 	text-align : center;
-	margin-top : -35px
+	margin-top : -40px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 /*UI layout*/
