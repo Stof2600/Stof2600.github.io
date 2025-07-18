@@ -67,6 +67,8 @@ a:hover
 	border-radius : 3px;
 	margin : 10px;
 	height : 110px;
+
+	text-align: center;
 }
 .gameBox > .gameIcon
 {
