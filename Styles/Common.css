@@ -56,6 +56,40 @@ a:hover
 	color : #5efc32;
 }
 
+.gameBox
+{
+	display: grid;
+	grid-template-areas:
+		"gameIcon gameTitle playButton";
+	grid-template-columns: 1fr 1fr 1fr;
+	
+	border : 3px solid red;
+	margin : 10px;
+	height : 110px;
+}
+.gameBox > .gameIcon
+{
+	padding : 5px;
+	height : 100px;
+	width : 100px;
+}
+.gameBox > .gameTitle
+{
+	margin-top : 5px;
+	margin-bottom : 0px;
+}
+.gameBox > .playButton
+{
+	font-family : "LinkFont";
+	margin-top : 40px;
+	margin-left: 300px;
+}
+.gameDesc
+{
+	text-align : center;
+	margin-top : -35px
+}
+
 /*UI layout*/
 .grid
 {
