@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Games",
-    "\\Games\\FISHGAME",
     "\\Games\\STARWIZARDS",
-    "\\Games\\STARWIZARDS\\Build"
+    "\\Games\\STARWIZARDS\\Build",
+    "\\Games\\STARWIZARDS\\TemplateData"
   ],
+  "SelectedNode": "\\Games\\STARWIZARDS\\StarWizards.html",
   "PreviewInSolutionExplorer": false
 }
