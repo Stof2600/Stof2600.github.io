@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
+    "",
     "\\Games",
-    "\\Games\\STARWIZARDS"
+    "\\Games\\FISHGAME",
+    "\\Games\\STARWIZARDS",
+    "\\Games\\STARWIZARDS\\Build"
   ],
+  "SelectedNode": "\\Games\\FISHGAME\\FishGame.html",
   "PreviewInSolutionExplorer": false
 }
