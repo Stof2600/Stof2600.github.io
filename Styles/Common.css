@@ -6,6 +6,21 @@
 }
 @font-face
 {
+	font-family : ProjectFont;
+	src : url("../Fonts/StalinistOne-Regular.ttf");
+}
+@font-face
+{
+	font-family : LargeFont;
+	src : url("../Fonts/Spaceport_2006.otf");
+}
+@font-face
+{
+	font-family : TextFont;
+	src : url("../Fonts/PixelSmall.ttf");
+}
+@font-face
+{
 	font-family : LinkFont;
 	src : url("../Fonts/Pixel.ttf");
 }
@@ -34,7 +49,7 @@ h2
 }
 h3
 {
-	font-family : "Arial";
+	font-family : "LargeFont";
 }
 
 .noSpaceText
@@ -68,6 +83,7 @@ a:hover
 	font-family : "LinkFont";
 }
 
+/*game box layout*/
 .gameBox
 {
 	display: grid;
@@ -107,6 +123,43 @@ a:hover
 	text-overflow: ellipsis;
 }
 
+/*project box layout*/
+.projectBox
+{
+	float: left;
+	display : grid;
+	grid-template-areas:
+		"title"
+		"description"
+		"Status"
+		"infoButton";
+	grid-template-rows: 1fr 4fr 0.5fr 0.5fr;
+
+	border : 3px solid red;
+	border-radius : 3px;
+	padding : 3px;
+	margin : 10px;
+	height : 400px;
+	width : 31.4%;
+
+	text-align: center;
+}
+.projectBox > .title
+{
+	font-family : "ProjectFont";
+	font-size : 40px;
+	margin-top : 0px;
+}
+.projectBox > .description
+{
+	
+	font-family : "TextFont";
+}
+.projectBox > .infoButton
+{
+	font-family : "LinkFont";
+}
+
 /*UI layout*/
 .grid
 {
@@ -128,7 +181,7 @@ a:hover
 }
 .grid > div.icon
 {
-	background-image : url("../Img/Ico/Wait.jpg");
+	background-image : url("../Img/Ico/SinCut.jpg");
 	padding : 100px;
 }
 .grid > div.emptyIcon
