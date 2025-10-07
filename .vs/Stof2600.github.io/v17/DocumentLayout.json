@@ -1,9 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\stefs\\Documents\\GitHub\\Stof2600.github.io\\",
+  "WorkspaceRootPath": "S:\\GITHUB\\Stof2600.github.io\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\stefs\\Documents\\GitHub\\Stof2600.github.io\\games.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|S:\\GITHUB\\Stof2600.github.io\\Games\\STARWIZARDS\\StarWizards.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Games\\STARWIZARDS\\StarWizards.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|S:\\GITHUB\\Stof2600.github.io\\games.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:games.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
@@ -19,12 +23,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "StarWizards.html",
+              "DocumentMoniker": "S:\\GITHUB\\Stof2600.github.io\\Games\\STARWIZARDS\\StarWizards.html",
+              "RelativeDocumentMoniker": "Games\\STARWIZARDS\\StarWizards.html",
+              "ToolTip": "S:\\GITHUB\\Stof2600.github.io\\Games\\STARWIZARDS\\StarWizards.html",
+              "RelativeToolTip": "Games\\STARWIZARDS\\StarWizards.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-10-07T11:44:26.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "games.html",
-              "DocumentMoniker": "C:\\Users\\stefs\\Documents\\GitHub\\Stof2600.github.io\\games.html",
+              "DocumentMoniker": "S:\\GITHUB\\Stof2600.github.io\\games.html",
               "RelativeDocumentMoniker": "games.html",
-              "ToolTip": "C:\\Users\\stefs\\Documents\\GitHub\\Stof2600.github.io\\games.html",
+              "ToolTip": "S:\\GITHUB\\Stof2600.github.io\\games.html",
               "RelativeToolTip": "games.html",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAowCAAAABgAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAowCIAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-09-15T11:45:33.771Z",
               "EditorCaption": ""
