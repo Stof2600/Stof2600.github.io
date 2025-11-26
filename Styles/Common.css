@@ -160,6 +160,32 @@ a:hover
 	font-family : "LinkFont";
 }
 
+/*project page layout*/
+.projectInfoBox
+{
+	border: 5px #0043c9 double;
+	float : left;
+	margin : 5px;
+	padding: 5px;
+	width: 76%;
+}
+
+.projectImageBox
+{
+	border: 5px #0043c9 double;
+	float : left;
+	margin: 5px;
+	padding: 5px;
+	width: 20%;
+}
+.projectImage 
+{
+	margin-bottom: 5px;
+	width: 100%;
+	justify-self: center;
+	float: left;
+}
+
 /*UI layout*/
 .grid
 {
