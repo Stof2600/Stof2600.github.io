@@ -1,0 +1,89 @@
+<html>
+	<head>
+		<title>ENCORE - OVERTURE</title>
+		<link rel="stylesheet" href="../../Styles/Common.css">
+		<link rel="icon" type="image/x-icon" href="../../Img/Ico/SinCut.jpg">
+	</head>
+		<body>
+		<div class="grid">
+			<div class="Icon"></div>
+
+			<div class="title">
+				<h1>ENCORE OVERTURE</h1>
+			</div>
+
+			<div class="menu">
+				<h2>PAGES</h2>
+				<a href="../../index.html"><h3 class="link">HOME</h3></a>
+				<a href="../../games.html"><h3 class="link">GAMES</h3></a>
+				<a href="../../projects.html"><h3 class="link">PROJECTS</h3></a>
+				<a href="../../about.html"><h3 class="link">ABOUT</h3></a>
+			</div>
+
+			<div class="content" style="border : 5px solid red; padding : 5px">
+				<div class="projectInfoBox">
+                    <h2>LETS MAKE A GAME</h2>
+                    <h3 class="noSpaceText">My younger brother asked me to help in making a game he had designed</h3>
+                    <h3 class="noSpaceText">After looking at the design document it was very similar to Guilty Gear 2: Overture</h3>
+                    <h3 class="noSpaceText">However the strategy system had been modernized and he had created his own characters and plot</h3>
+                    <h3 class="noSpaceText">It seemed fun to work on and I had no other project at the time so I accepted</h3>
+                    <br>
+                    <h2>GAMEPLAY</h2>
+                    <h3 class="noSpaceText">The player has two responsablilities while playing</h3>
+                    <h3 class="noSpaceText">Firstly is fighting: killing enemy players and destroying their base to win</h3>
+                    <h3 class="noSpaceText">This follows a basic 3D fighting game style using direction inputs and combos</h3>
+                    <br>
+                    <h3 class="noSpaceText">Secondly the strategy menu: buying and commanding your units to face of against the enemies units</h3>
+                    <h3 class="noSpaceText">In this real-time strategy part you need to both capture and defend the control points on the map</h3>
+                    <br>
+                    <h3 class="noSpaceText">winning in the strategy can give you items and skills to assint in the fighting</h3>
+                    <h3 class="noSpaceText">At the same time fighting properly allows your units to advance and give the player more chances to strike the enemy base</h3>
+                    <br>
+                    <h2>STRATEGY SYSTEM</h2>
+                    <h3 class="noSpaceText">It uses unity NavMesh to move all the units, to optimize it a bit only one teams AI is updated on a frame</h3>
+                    <h3 class="noSpaceText">The small spheres are capture units and always move to the next control point, their AI path only need to be set on spawn</h3>
+                    <h3 class="noSpaceText">The units that can be bought by the player can be assigned to groups</h3>
+                    <h3 class="noSpaceText">Every group has a movement target, this can either be a control point or a base</h3>
+                    <h3 class="noSpaceText">If the group encounters an enemy group they will start combat, this currently has no animation</h3>
+                    <h3 class="noSpaceText">Once the group reaches their target they will assist in its capture or fight off any enemy capture units</h3>
+                    <h3 class="noSpaceText">If captured a control point will award the player with "COMMAND"</h3>
+                    <h3 class="noSpaceText">COMMAND can be used to buy troops, items, skills and other things to assist the player</h3>
+                    <h3 class="noSpaceText">In order for the player to not instantly destroy the other teams base the units need to reach it first to break the shield</h3>
+                    <br>
+                    <h2>UNITS</h2>
+                    <h3 class="noSpaceText">Currently there are 4 purchasable units</h3>
+                    <h3 class="noSpaceText">Knights: medium armor units with basic stats</h3>
+                    <h3 class="noSpaceText">Archers: Slower and weaker then knights they are easy to take out but have ranged attacks</h3>
+                    <h3 class="noSpaceText">Cavalry: fast units but with light armor</h3>
+                    <h3 class="noSpaceText">Heavy Knights: slow but with good defence</h3>
+                    <h3 class="noSpaceText">Each unit also has a counter or a unit type its weak to</h3>
+                    <h3 class="noSpaceText">If you spot the opponent using a single type of unit you can invest in the counter to it</h3>
+                    <br>
+                    <h2>FIGHTING</h2>
+                    <h3 class="noSpaceText">The fighting system is currently not finished, but its very similar to most 2D fighting games with frame timers and hitboxes</h3>
+                    <br>
+                    <h2>OTHER STUFF</h2>
+                    <h3 class="noSpaceText">I wanted to mention the scrolling text in the background of the title screen because it think its funny</h3>
+                    <h3 class="noSpaceText">We designed it based on Cowboy Bebop's similar "just put text everywhere" approach</h3>
+                    <h3 class="noSpaceText">The text spawning and moving isn't interesting but the content itself is</h3>
+                    <h3 class="noSpaceText">It uses a random line from the games code to display, ignoring empty lines and the "{ }" brackets in the code</h3>
+                    <h3 class="noSpaceText">Technically if you read it for long enough you could get all the lines of code to remake the game</h3>
+                    <br>
+                    <h2>END NOTE</h2>
+                    <h3 class="noSpaceText">Since my younger brother is in charge of both making and animating the characters, if he doesn't work the project won't progress</h3>
+                    <h3 class="noSpaceText">For this reason the project is currently paused, and will probably never be finished</h3>
+                    <h3 class="noSpaceText">I may re-use the strategy system for a mobile game or something at some point</h3>
+                </div>
+                <div class="projectImageBox">
+                    <img src="Img/Menu1.png" class="projectImage">
+                    <img src="Img/Menu2.png" class="projectImage">
+                    <img src="Img/UI.png" class="projectImage">
+                    <img src="Img/Units.png" class="projectImage">
+                    <img src="Img/StrategyMenu.png" class="projectImage">
+                    <img src="Img/Store.png" class="projectImage">
+                </div>
+			</div>
+
+		</div>
+	</body>
+</html>
