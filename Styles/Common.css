@@ -25,6 +25,11 @@
 	src : url("../Fonts/Pixel.ttf");
 }
 
+/* OLD STUFF
+* BORDER BLUE: #0043c9
+* BOX RED: red
+*/
+
 /*main style*/
 body
 {
@@ -91,7 +96,7 @@ a:hover
 		"gameIcon gameTitle playButton";
 	grid-template-columns: 1fr 3fr 1fr;
 	
-	border : 3px solid red;
+	border : 3px solid green;
 	border-radius : 3px;
 	margin : 10px;
 	height : 110px;
@@ -135,7 +140,7 @@ a:hover
 		"infoButton";
 	grid-template-rows: 1fr 4fr 0.5fr 0.5fr;
 
-	border : 3px solid red;
+	border : 3px solid green;
 	border-radius : 3px;
 	padding : 3px;
 	margin : 10px;
@@ -163,7 +168,7 @@ a:hover
 /*project page layout*/
 .projectInfoBox
 {
-	border: 5px #0043c9 double;
+	border: 5px white double;
 	float : left;
 	margin : 5px;
 	padding: 5px;
@@ -172,7 +177,7 @@ a:hover
 
 .projectImageBox
 {
-	border: 5px #0043c9 double;
+	border: 5px white double;
 	float : left;
 	margin: 5px;
 	padding: 5px;
@@ -200,19 +205,15 @@ a:hover
 
 .grid > div
 {
-	border : 5px solid #0043c9;
+	border : 5px solid white;
 	border-radius : 7px; 
 	background-color: black;
 	color : white;
 }
 .grid > div.icon
 {
-	background-image : url("../Img/Ico/SinCut.jpg");
+	/*background-image : url("../Img/Ico/SinCut.jpg"); ICON*/
 	padding : 100px;
-}
-.grid > div.emptyIcon
-{
-	
 }
 .grid > div.title
 {
@@ -228,6 +229,6 @@ a:hover
 .grid > div.content
 {
 	grid-area : content;
-	border-style : none;
-	border-color : black;
+	padding: 3px;
+	border : 5px solid white
 }
