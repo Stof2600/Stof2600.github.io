@@ -224,11 +224,12 @@ a:hover
 {
 	grid-area : menu;
 	text-align : center;
-	height : 40vh;
+	height : 74vh;
 }
 .grid > div.content
 {
 	grid-area : content;
 	padding: 3px;
-	border : 5px solid white
+	border : 5px solid white;
+	
 }
