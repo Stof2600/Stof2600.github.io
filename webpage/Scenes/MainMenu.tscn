@@ -1,7 +1,23 @@
 [gd_scene format=3 uid="uid://bc1x3t8nhiict"]
 
+[ext_resource type="Texture2D" uid="uid://cj4utv2hert6y" path="res://Logos/NameLogo.png" id="1_tt5f1"]
+
+[sub_resource type="Environment" id="Environment_853f1"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+
 [node name="MainMenu" type="Node" unique_id=736270624]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=982803425]
+environment = SubResource("Environment_853f1")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=842823936]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 projection = 1
+
+[node name="Header" type="Node3D" parent="." unique_id=465173162]
+
+[node name="Sprite3D" type="Sprite3D" parent="Header" unique_id=523537050]
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("1_tt5f1")
