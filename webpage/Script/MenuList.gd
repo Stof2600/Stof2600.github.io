@@ -1,0 +1,26 @@
+extends Node
+class_name MenuList
+
+@export var Menus: Array[Node3D]
+
+var lastActive: Node3D
+
+func _ready() -> void:
+	lastActive = Menus[0]
+	
+	for m in Menus:
+		m.visible = false
+
+func LoadMenu(search: String):
+	lastActive.visible = false
+	
+	for m in Menus:
+		if m.name.to_lower() == search.to_lower():
+			m.visible = true
+			lastActive = m
+			return m
+	
+	Menus[0].visible = true
+	lastActive = Menus[0]
+	print("NO MENU FOUND, CHECK MENU LIST OR GRAMMAR")
+	return Menus[0]

@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://bc1x3t8nhiict"]
+
+[ext_resource type="Script" uid="uid://swc0koywclt4" path="res://Script/MenuList.gd" id="1_ketcf"]
+[ext_resource type="Texture2D" uid="uid://cj4utv2hert6y" path="res://Logos/NameLogo.png" id="1_v1m0x"]
+[ext_resource type="Texture2D" uid="uid://cle3ddwmjhaxv" path="res://Sprites/Square.png" id="2_3ua6x"]
+[ext_resource type="Script" uid="uid://bwlpjn0twh0sg" path="res://Script/Transition.gd" id="2_aikl4"]
+[ext_resource type="Texture2D" uid="uid://cxjd0wvxgngtj" path="res://Sprites/SlideArrowEnd.png" id="3_aikl4"]
+[ext_resource type="Texture2D" uid="uid://t8ghk0rngx1t" path="res://Sprites/SlideArrowStart.png" id="4_ketcf"]
+[ext_resource type="Texture2D" uid="uid://c1k05msku4u7m" path="res://Logos/DragonBlue.png" id="7_nii28"]
+
+[sub_resource type="Environment" id="Environment_853f1"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+
+[node name="Index" type="Node" unique_id=736270624]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=982803425]
+environment = SubResource("Environment_853f1")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=842823936]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+projection = 1
+
+[node name="MenuList" type="Node" parent="." unique_id=1318627938 node_paths=PackedStringArray("Menus")]
+script = ExtResource("1_ketcf")
+Menus = [NodePath("../MainMenu")]
+
+[node name="Transition" type="Node3D" parent="." unique_id=465173162]
+script = ExtResource("2_aikl4")
+
+[node name="TransitionArrow1" type="Node3D" parent="Transition" unique_id=423881755]
+transform = Transform3D(1, 0, 0, 0, 1.32, 0, 0, 0, 1, -2.1, 0.42, 0)
+
+[node name="Square" type="Sprite3D" parent="Transition/TransitionArrow1" unique_id=958153535]
+transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("2_3ua6x")
+
+[node name="Start" type="Sprite3D" parent="Transition/TransitionArrow1" unique_id=1707660713]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 1, 0, 0)
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("3_aikl4")
+
+[node name="End" type="Sprite3D" parent="Transition/TransitionArrow1" unique_id=1980297986]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -1, 0, 0)
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("4_ketcf")
+
+[node name="TransitionArrow2" type="Node3D" parent="Transition" unique_id=855532330]
+transform = Transform3D(1, 0, 0, 0, 1.32, 0, 0, 0, 1, -2.1, 0.21, 0)
+
+[node name="Square" type="Sprite3D" parent="Transition/TransitionArrow2" unique_id=2085585111]
+transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("2_3ua6x")
+
+[node name="Start" type="Sprite3D" parent="Transition/TransitionArrow2" unique_id=1585859327]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 1, 0, 0)
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("3_aikl4")
+
+[node name="End" type="Sprite3D" parent="Transition/TransitionArrow2" unique_id=200471152]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -1, 0, 0)
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("4_ketcf")
+
+[node name="TransitionArrow3" type="Node3D" parent="Transition" unique_id=574051837]
+transform = Transform3D(1, 0, 0, 0, 1.32, 0, 0, 0, 1, -2.1, 0, 0)
+
+[node name="Square" type="Sprite3D" parent="Transition/TransitionArrow3" unique_id=113142061]
+transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("2_3ua6x")
+
+[node name="Start" type="Sprite3D" parent="Transition/TransitionArrow3" unique_id=636491152]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 1, 0, 0)
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("3_aikl4")
+
+[node name="End" type="Sprite3D" parent="Transition/TransitionArrow3" unique_id=728940476]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -1, 0, 0)
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("4_ketcf")
+
+[node name="TransitionArrow4" type="Node3D" parent="Transition" unique_id=618737781]
+transform = Transform3D(1, 0, 0, 0, 1.32, 0, 0, 0, 1, -2.1, -0.21, 0)
+
+[node name="Square" type="Sprite3D" parent="Transition/TransitionArrow4" unique_id=90174477]
+transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("2_3ua6x")
+
+[node name="Start" type="Sprite3D" parent="Transition/TransitionArrow4" unique_id=1884042691]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 1, 0, 0)
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("3_aikl4")
+
+[node name="End" type="Sprite3D" parent="Transition/TransitionArrow4" unique_id=1375299978]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -1, 0, 0)
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("4_ketcf")
+
+[node name="TransitionArrow5" type="Node3D" parent="Transition" unique_id=1760661226]
+transform = Transform3D(1, 0, 0, 0, 1.32, 0, 0, 0, 1, -2.1, -0.42, 0)
+
+[node name="Square" type="Sprite3D" parent="Transition/TransitionArrow5" unique_id=2001710795]
+transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("2_3ua6x")
+
+[node name="Start" type="Sprite3D" parent="Transition/TransitionArrow5" unique_id=1181261318]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 1, 0, 0)
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("3_aikl4")
+
+[node name="End" type="Sprite3D" parent="Transition/TransitionArrow5" unique_id=1862081298]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -1, 0, 0)
+modulate = Color(0, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("4_ketcf")
+
+[node name="Startup" type="Node3D" parent="." unique_id=696735724]
+visible = false
+
+[node name="Logo" type="Sprite3D" parent="Startup" unique_id=523537050]
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("1_v1m0x")
+
+[node name="MainMenu" type="Node3D" parent="." unique_id=1891476941]
+
+[node name="Logo" type="Sprite3D" parent="MainMenu" unique_id=682517448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7600461, 0.37071624, 0)
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("7_nii28")
