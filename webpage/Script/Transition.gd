@@ -3,8 +3,8 @@ extends Node3D
 @onready var startScreen: Node3D = $"../Startup"
 @onready var arrows: = [$TransitionArrow1, $TransitionArrow2, $TransitionArrow3, $TransitionArrow4, $TransitionArrow5]
 @onready var menuList: MenuList = $"../MenuList"
-@export var bootTimer: float = 2
-@export var transitionTimer: float = 1
+@export var bootTimer: float = 1
+@export var transitionTimer: float = 2
 
 @export var arrowStartPos: float = -2.5
 @export var arrowCutPos: float = 0
