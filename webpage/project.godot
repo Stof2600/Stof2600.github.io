@@ -19,7 +19,6 @@ config/icon="uid://dc5wec3hqr8tg"
 [display]
 
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 
 [physics]
 
