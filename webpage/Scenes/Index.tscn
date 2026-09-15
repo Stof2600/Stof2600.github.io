@@ -29,7 +29,7 @@ Menus = [NodePath("../MainMenu")]
 script = ExtResource("2_aikl4")
 
 [node name="TransitionArrow1" type="Node3D" parent="Transition" unique_id=423881755]
-transform = Transform3D(1, 0, 0, 0, 1.32, 0, 0, 0, 1, -2.1, 0.42, 0)
+transform = Transform3D(1, 0, 0, 0, 1.32, 0, 0, 0, 1, -2.5, 0.42, 0)
 
 [node name="Square" type="Sprite3D" parent="Transition/TransitionArrow1" unique_id=958153535]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
@@ -50,7 +50,7 @@ texture_filter = 0
 texture = ExtResource("4_ketcf")
 
 [node name="TransitionArrow2" type="Node3D" parent="Transition" unique_id=855532330]
-transform = Transform3D(1, 0, 0, 0, 1.32, 0, 0, 0, 1, -2.1, 0.21, 0)
+transform = Transform3D(1, 0, 0, 0, 1.32, 0, 0, 0, 1, -2.5, 0.21, 0)
 
 [node name="Square" type="Sprite3D" parent="Transition/TransitionArrow2" unique_id=2085585111]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
@@ -71,7 +71,7 @@ texture_filter = 0
 texture = ExtResource("4_ketcf")
 
 [node name="TransitionArrow3" type="Node3D" parent="Transition" unique_id=574051837]
-transform = Transform3D(1, 0, 0, 0, 1.32, 0, 0, 0, 1, -2.1, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1.32, 0, 0, 0, 1, -2.5, 0, 0)
 
 [node name="Square" type="Sprite3D" parent="Transition/TransitionArrow3" unique_id=113142061]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
@@ -92,7 +92,7 @@ texture_filter = 0
 texture = ExtResource("4_ketcf")
 
 [node name="TransitionArrow4" type="Node3D" parent="Transition" unique_id=618737781]
-transform = Transform3D(1, 0, 0, 0, 1.32, 0, 0, 0, 1, -2.1, -0.21, 0)
+transform = Transform3D(1, 0, 0, 0, 1.32, 0, 0, 0, 1, -2.5, -0.21, 0)
 
 [node name="Square" type="Sprite3D" parent="Transition/TransitionArrow4" unique_id=90174477]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
@@ -113,7 +113,7 @@ texture_filter = 0
 texture = ExtResource("4_ketcf")
 
 [node name="TransitionArrow5" type="Node3D" parent="Transition" unique_id=1760661226]
-transform = Transform3D(1, 0, 0, 0, 1.32, 0, 0, 0, 1, -2.1, -0.42, 0)
+transform = Transform3D(1, 0, 0, 0, 1.32, 0, 0, 0, 1, -2.5, -0.42, 0)
 
 [node name="Square" type="Sprite3D" parent="Transition/TransitionArrow5" unique_id=2001710795]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)

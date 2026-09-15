@@ -6,9 +6,9 @@ extends Node3D
 @export var bootTimer: float = 2
 @export var transitionTimer: float = 1
 
-@export var arrowStartPos: float = -2.1
+@export var arrowStartPos: float = -2.5
 @export var arrowCutPos: float = 0
-@export var arrowEndPos: float = 2.1
+@export var arrowEndPos: float = 2.5
 @export var arrowOffset: float = 0.5
 
 var tt: float = 0
@@ -23,11 +23,7 @@ func _ready() -> void:
 	doIntro = true
 	startScreen.visible = true
 	
-	transitionUp = true
-	
-	for a in arrows:
-		a.position.x = arrowStartPos
-	
+	ResetTransition()
 	RequestTransition()
 	
 	pass
@@ -51,6 +47,8 @@ func Transition(delta: float) -> void:
 	#move arrows for transition
 	for i in arrows.size():
 		var a = arrows[i]
+		a.visible = true
+		
 		if a.position.x < 0 && transitionUp:
 			var start = arrowStartPos - (arrowOffset * i)
 			var end = arrowEndPos + (arrowOffset * (arrows.size() - 1))
@@ -87,6 +85,7 @@ func ResetTransition() -> void:
 	doTransition = false
 	
 	for a in arrows:
+		a.visible = false
 		a.position.x = arrowStartPos
 	
 	pass
