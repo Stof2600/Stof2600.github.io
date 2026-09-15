@@ -192,7 +192,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33264458, 0.03)
 labetText = "MY CV"
 
 [node name="MainMenu" type="Node3D" parent="." unique_id=1891476941]
-visible = false
 
 [node name="Header" type="Node3D" parent="MainMenu" unique_id=1155214111]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.371, 0)
@@ -229,7 +228,18 @@ font_size = 20
 outline_size = 0
 horizontal_alignment = 2
 
+[node name="TitleText" type="Label3D" parent="MainMenu" unique_id=1321888650]
+transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 0, 0.11073151, 0)
+modulate = Color(1, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 1)
+text = "THIS WEBSITE IS STILL
+IN ACTIVE DEVELOPMENT"
+font = ExtResource("9_x6x8t")
+vertical_alignment = 0
+line_spacing = -51.64
+
 [node name="GameMenu" type="Node3D" parent="." unique_id=615607661]
+visible = false
 
 [node name="Header" type="Node3D" parent="GameMenu" unique_id=555420804]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.371, 0)
