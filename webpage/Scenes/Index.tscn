@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cxjd0wvxgngtj" path="res://Sprites/SlideArrowEnd.png" id="3_aikl4"]
 [ext_resource type="Texture2D" uid="uid://t8ghk0rngx1t" path="res://Sprites/SlideArrowStart.png" id="4_ketcf"]
 [ext_resource type="Texture2D" uid="uid://c1k05msku4u7m" path="res://Logos/DragonBlue.png" id="7_nii28"]
+[ext_resource type="Script" uid="uid://bpvarefuv6hth" path="res://Script/IconRandomizer.gd" id="8_r3dr4"]
 
 [sub_resource type="Environment" id="Environment_853f1"]
 background_mode = 1
@@ -143,8 +144,22 @@ texture = ExtResource("1_v1m0x")
 
 [node name="MainMenu" type="Node3D" parent="." unique_id=1891476941]
 
-[node name="Icon" type="Sprite3D" parent="MainMenu" unique_id=682517448]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7600461, 0.37071624, 0)
+[node name="Header" type="Node3D" parent="MainMenu" unique_id=1155214111]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.371, 0)
+
+[node name="Icon" type="Sprite3D" parent="MainMenu/Header" unique_id=682517448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7600461, -0.0002837479, 0)
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("7_nii28")
+script = ExtResource("8_r3dr4")
+
+[node name="BonusText" type="Label3D" parent="MainMenu" unique_id=581731880]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.8856743, -0.4708647, 0)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 1)
+text = "IGNORE THE BORDER
+I'M NOT A WEB DEV"
+font_size = 20
+outline_size = 0
+horizontal_alignment = 2
