@@ -143,7 +143,7 @@ texture = ExtResource("1_v1m0x")
 
 [node name="MainMenu" type="Node3D" parent="." unique_id=1891476941]
 
-[node name="Logo" type="Sprite3D" parent="MainMenu" unique_id=682517448]
+[node name="Icon" type="Sprite3D" parent="MainMenu" unique_id=682517448]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7600461, 0.37071624, 0)
 alpha_cut = 1
 texture_filter = 0
