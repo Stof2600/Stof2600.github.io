@@ -6,9 +6,9 @@ extends Node3D
 @export var bootTimer: float = 2
 @export var transitionTimer: float = 1
 
-@export var arrowStartPos: float = -2.1
+@export var arrowStartPos: float = -2.5
 @export var arrowCutPos: float = 0
-@export var arrowEndPos: float = 2.1
+@export var arrowEndPos: float = 2.5
 @export var arrowOffset: float = 0.5
 
 var tt: float = 0
