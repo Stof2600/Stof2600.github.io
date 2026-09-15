@@ -2,11 +2,14 @@ extends Node
 class_name MenuList
 
 @export var Menus: Array[Node3D]
+@export var pageSelect: Node3D
 
 var lastActive: Node3D
 
 func _ready() -> void:
 	lastActive = Menus[0]
+	
+	pageSelect.visible = false
 	
 	for m in Menus:
 		m.visible = false
@@ -24,3 +27,7 @@ func LoadMenu(search: String):
 	lastActive = Menus[0]
 	print("NO MENU FOUND, CHECK MENU LIST OR GRAMMAR")
 	return Menus[0]
+
+func SetPageSelect(open: bool = true):
+	pageSelect.visible = open
+	pass

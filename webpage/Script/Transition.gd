@@ -1,10 +1,12 @@
 extends Node3D
+class_name Transition
 
 @onready var startScreen: Node3D = $"../Startup"
 @onready var arrows: = [$TransitionArrow1, $TransitionArrow2, $TransitionArrow3, $TransitionArrow4, $TransitionArrow5]
 @onready var menuList: MenuList = $"../MenuList"
-@export var bootTimer: float = 1
-@export var transitionTimer: float = 2
+@export var bootTimer: float = 0.5
+##is double of what you input due to quickly written code
+@export var transitionTimer: float = 1
 
 @export var arrowStartPos: float = -2.5
 @export var arrowCutPos: float = 0
@@ -17,6 +19,8 @@ var doIntro: bool = true
 var doTransition: bool = false
 var transitionUp: bool = true
 
+var menuToLoad: String = "MainMenu"
+
 signal TransitionCut
 
 func _ready() -> void:
@@ -24,16 +28,13 @@ func _ready() -> void:
 	startScreen.visible = true
 	
 	ResetTransition()
-	RequestTransition()
+	RequestTransition("MainMenu")
 	
 	pass
 
 func _process(delta: float) -> void:
 	if doTransition:
 		Transition(delta)
-	
-	if Input.is_key_pressed(KEY_SPACE):
-		RequestTransition()
 	
 	pass
 
@@ -66,7 +67,11 @@ func Transition(delta: float) -> void:
 		
 		if(doIntro):
 			menuList.LoadMenu("MainMenu")
+			menuList.SetPageSelect(true)
 			doIntro = false
+		else:
+			menuList.LoadMenu(menuToLoad)
+			menuList.SetPageSelect(true)
 		
 		pass
 	elif transitionUp:
@@ -90,6 +95,7 @@ func ResetTransition() -> void:
 	
 	pass
 
-func RequestTransition():
-	if doTransition: return
+func RequestTransition(menuName: String):
+	if doTransition || (menuList.lastActive.name.to_lower() == menuName.to_lower() && !doIntro): return
 	doTransition = true
+	menuToLoad = menuName

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://i1pysgga0re7"]
+
+[ext_resource type="Script" uid="uid://doedy7nd7d0wd" path="res://Script/TextButton.gd" id="1_jkcfm"]
+[ext_resource type="FontFile" uid="uid://bwdtnm6evwpkl" path="res://Fonts/vhs-vcr-osd.ttf" id="2_1qjrg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s8xio"]
+size = Vector3(0.205, 0.07, 0.125)
+
+[node name="TextButton" type="Area3D" unique_id=838074673]
+script = ExtResource("1_jkcfm")
+hoverColor = Color(0, 0.33333334, 0.54901963, 1)
+clickColor = Color(0, 0.49803922, 0, 1)
+
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=1083683888]
+shape = SubResource("BoxShape3D_s8xio")
+
+[node name="OptionText" type="Label3D" parent="." unique_id=179765374]
+transform = Transform3D(0.265, 0, 0, 0, 0.265, 0, 0, 0, 0.265, 0, -0.022264674, 0)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 1)
+text = "GAMES"
+font = ExtResource("2_1qjrg")
+outline_size = 0
+line_spacing = -28.0
+
+[connection signal="mouse_entered" from="." to="." method="MouseEnter"]
+[connection signal="mouse_exited" from="." to="." method="MouseExit"]

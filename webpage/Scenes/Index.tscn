@@ -7,26 +7,33 @@
 [ext_resource type="Texture2D" uid="uid://cxjd0wvxgngtj" path="res://Sprites/SlideArrowEnd.png" id="3_aikl4"]
 [ext_resource type="Texture2D" uid="uid://t8ghk0rngx1t" path="res://Sprites/SlideArrowStart.png" id="4_ketcf"]
 [ext_resource type="Texture2D" uid="uid://c1k05msku4u7m" path="res://Logos/DragonBlue.png" id="7_nii28"]
+[ext_resource type="PackedScene" uid="uid://i1pysgga0re7" path="res://PreFabs/TextButton.tscn" id="8_ethub"]
 [ext_resource type="Script" uid="uid://bpvarefuv6hth" path="res://Script/IconRandomizer.gd" id="8_r3dr4"]
+[ext_resource type="FontFile" uid="uid://bwdtnm6evwpkl" path="res://Fonts/vhs-vcr-osd.ttf" id="9_x6x8t"]
 
 [sub_resource type="Environment" id="Environment_853f1"]
 background_mode = 1
 background_color = Color(1, 1, 1, 1)
+ambient_light_source = 1
 
 [node name="Index" type="Node" unique_id=736270624]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=982803425]
+[node name="BaseWorld" type="Node3D" parent="." unique_id=1591310206]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="BaseWorld" unique_id=982803425]
 environment = SubResource("Environment_853f1")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=842823936]
+[node name="Camera3D" type="Camera3D" parent="BaseWorld" unique_id=842823936]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 projection = 1
 
-[node name="MenuList" type="Node" parent="." unique_id=1318627938 node_paths=PackedStringArray("Menus")]
+[node name="MenuList" type="Node" parent="." unique_id=1318627938 node_paths=PackedStringArray("Menus", "pageSelect")]
 script = ExtResource("1_ketcf")
-Menus = [NodePath("../MainMenu")]
+Menus = [NodePath("../MainMenu"), NodePath("../GameMenu")]
+pageSelect = NodePath("../PageSelector")
 
 [node name="Transition" type="Node3D" parent="." unique_id=465173162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6)
 script = ExtResource("2_aikl4")
 
 [node name="TransitionArrow1" type="Node3D" parent="Transition" unique_id=423881755]
@@ -142,17 +149,51 @@ alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("1_v1m0x")
 
+[node name="PageSelector" type="Node3D" parent="." unique_id=979400463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.76, -0.110008, 0)
+
+[node name="Design" type="Node3D" parent="PageSelector" unique_id=399977226]
+
+[node name="Title" type="Label3D" parent="PageSelector/Design" unique_id=1742227570]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.301, 0.02)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 1)
+text = "PAGES"
+font = ExtResource("9_x6x8t")
+
+[node name="Outline" type="Sprite3D" parent="PageSelector/Design" unique_id=664689706]
+transform = Transform3D(0.72, 0, 0, 0, 2.325, 0, 0, 0, 1, 0, 0, 0)
+modulate = Color(0, 0.33333334, 0.54901963, 1)
+texture_filter = 0
+texture = ExtResource("2_3ua6x")
+
+[node name="Background" type="Sprite3D" parent="PageSelector/Design" unique_id=2026681836]
+transform = Transform3D(0.64, 0, 0, 0, 2.245, 0, 0, 0, 1, 0, 0, 0.01)
+texture_filter = 0
+texture = ExtResource("2_3ua6x")
+
+[node name="Options" type="Node3D" parent="PageSelector" unique_id=437510063]
+
+[node name="MainPage" parent="PageSelector/Options" unique_id=1400870267 instance=ExtResource("8_ethub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24305625, 0.034240723)
+labetText = "HOME"
+menuTarget = "MainMenu"
+
+[node name="GamePage" parent="PageSelector/Options" unique_id=838074673 instance=ExtResource("8_ethub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18961526, 0.03)
+labetText = "GAMES"
+menuTarget = "GameMenu"
+
 [node name="MainMenu" type="Node3D" parent="." unique_id=1891476941]
 
 [node name="Header" type="Node3D" parent="MainMenu" unique_id=1155214111]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.371, 0)
 
 [node name="Icon" type="Sprite3D" parent="MainMenu/Header" unique_id=682517448]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7600461, -0.0002837479, 0)
+transform = Transform3D(0.695, 0, 0, 0, 0.695, 0, 0, 0, 0.695, -0.0024114847, -0.0002837479, 0)
 alpha_cut = 1
 texture_filter = 0
-texture = ExtResource("7_nii28")
-script = ExtResource("8_r3dr4")
+texture = ExtResource("1_v1m0x")
 
 [node name="BonusText" type="Label3D" parent="MainMenu" unique_id=581731880]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.8856743, -0.4708647, 0)
@@ -163,3 +204,26 @@ I'M NOT A WEB DEV"
 font_size = 20
 outline_size = 0
 horizontal_alignment = 2
+
+[node name="GameMenu" type="Node3D" parent="." unique_id=615607661]
+
+[node name="Header" type="Node3D" parent="GameMenu" unique_id=555420804]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.371, 0)
+
+[node name="Icon" type="Sprite3D" parent="GameMenu/Header" unique_id=177116863]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7600461, -0.0002837479, 0)
+texture_filter = 4
+texture = ExtResource("7_nii28")
+script = ExtResource("8_r3dr4")
+
+[node name="BonusText" type="Label3D" parent="GameMenu" unique_id=1579545706]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.8856743, -0.4708647, 0)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 1)
+text = "GAME MENU"
+font_size = 20
+outline_size = 0
+horizontal_alignment = 2
+
+[connection signal="ButtonChangeMenu" from="PageSelector/Options/MainPage" to="Transition" method="RequestTransition"]
+[connection signal="ButtonChangeMenu" from="PageSelector/Options/GamePage" to="Transition" method="RequestTransition"]
