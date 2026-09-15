@@ -14,7 +14,7 @@ config/name="WEBPAGE"
 run/main_scene="uid://bc1x3t8nhiict"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/show_image=false
-config/icon="uid://dc5wec3hqr8tg"
+config/icon="uid://c1k05msku4u7m"
 
 [display]
 
