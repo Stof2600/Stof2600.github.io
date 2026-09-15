@@ -212,7 +212,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.371, 0)
 
 [node name="Icon" type="Sprite3D" parent="GameMenu/Header" unique_id=177116863]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7600461, -0.0002837479, 0)
-texture_filter = 4
+texture_filter = 0
 texture = ExtResource("7_nii28")
 script = ExtResource("8_r3dr4")
 
