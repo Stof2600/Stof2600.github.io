@@ -8,9 +8,9 @@ class_name Transition
 ##is double of what you input due to quickly written code
 @export var transitionTimer: float = 1
 
-@export var arrowStartPos: float = -2800
+@export var arrowStartPos: float = -3500
 @export var arrowCutPos: float = -800
-@export var arrowEndPos: float = 1280
+@export var arrowEndPos: float = 2700
 
 var tt: float = 0
 
