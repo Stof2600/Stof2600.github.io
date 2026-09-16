@@ -14,6 +14,7 @@
 
 [sub_resource type="Environment" id="Environment_853f1"]
 background_mode = 1
+background_color = Color(1, 1, 1, 1)
 ambient_light_source = 1
 
 [node name="Index" type="Node" unique_id=736270624]
@@ -52,8 +53,7 @@ size = Vector2i(1280, 720)
 render_target_update_mode = 4
 
 [node name="Camera" type="Camera3D" parent="UI/SubViewportContainer/SubViewport" unique_id=842823936]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
-projection = 1
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 6.5, 5.8)
 
 [node name="Background" type="ColorRect" parent="UI" unique_id=122789107]
 layout_mode = 1
@@ -73,7 +73,6 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="MainMenu" type="Control" parent="UI/Menus" unique_id=1246409895]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -135,26 +134,26 @@ theme_override_font_sizes/font_size = 24
 text = "BY STEF SCHOUTEN"
 horizontal_alignment = 1
 
-[node name="Title" type="Label" parent="UI/Menus/MainMenu" unique_id=1406300830]
+[node name="WARNING" type="Label" parent="UI/Menus/MainMenu" unique_id=1406300830]
 modulate = Color(1, 0, 0, 1)
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 offset_left = -419.0
-offset_top = -45.00003
+offset_top = -90.0
 offset_right = 419.0
-offset_bottom = 45.00003
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 theme_override_fonts/font = ExtResource("9_x6x8t")
 theme_override_font_sizes/font_size = 31
 text = "THIS WEBPAGE IS STILL IN DEVELOPMENT"
 horizontal_alignment = 1
 
 [node name="GameMenu" type="Control" parent="UI/Menus" unique_id=1241410643]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -381,6 +380,7 @@ mouse_filter = 2
 script = ExtResource("2_aikl4")
 
 [node name="ArrowBlock" type="TextureRect" parent="UI/Special/Transition" unique_id=1094395577]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
