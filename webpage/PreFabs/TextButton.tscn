@@ -1,28 +1,48 @@
 [gd_scene format=3 uid="uid://i1pysgga0re7"]
 
-[ext_resource type="Script" uid="uid://doedy7nd7d0wd" path="res://Script/TextButton.gd" id="1_jkcfm"]
+[ext_resource type="Script" uid="uid://doedy7nd7d0wd" path="res://Script/MenuSwitch.gd" id="1_jkcfm"]
 [ext_resource type="FontFile" uid="uid://bwdtnm6evwpkl" path="res://Fonts/vhs-vcr-osd.ttf" id="2_1qjrg"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_s8xio"]
-size = Vector3(0.205, 0.07, 0.125)
-
-[node name="TextButton" type="Area3D" unique_id=838074673]
+[node name="TextButton" type="Button" unique_id=573627997]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 126.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 23
 script = ExtResource("1_jkcfm")
 hoverColor = Color(0, 0.33333334, 0.54901963, 1)
-clickColor = Color(0, 0.49803922, 0, 1)
+clickColor = Color(0, 0.57312953, 5.7756904e-07, 1)
 
-[node name="Collider" type="CollisionShape3D" parent="." unique_id=1083683888]
-shape = SubResource("BoxShape3D_s8xio")
-
-[node name="OptionText" type="Label3D" parent="." unique_id=179765374]
-transform = Transform3D(0.265, 0, 0, 0, 0.265, 0, 0, 0, 0.265, 0.0031425357, -0.022264674, 0)
+[node name="Text" type="Label" parent="." unique_id=1766206868]
 modulate = Color(0, 0, 0, 1)
-outline_modulate = Color(1, 1, 1, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -7.0
+offset_right = 2.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_1qjrg")
+theme_override_font_sizes/font_size = 29
 text = "BUTTON"
-font = ExtResource("2_1qjrg")
-outline_size = 0
-uppercase = true
-line_spacing = -28.0
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="mouse_entered" from="." to="." method="MouseEnter"]
 [connection signal="mouse_exited" from="." to="." method="MouseExit"]
+[connection signal="pressed" from="." to="." method="_pressed"]

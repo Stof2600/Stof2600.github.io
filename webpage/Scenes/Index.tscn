@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bwlpjn0twh0sg" path="res://Script/Transition.gd" id="2_aikl4"]
 [ext_resource type="Script" uid="uid://ogaiji4lk2sh" path="res://Script/PageSelector.gd" id="7_h6qgc"]
 [ext_resource type="Texture2D" uid="uid://c1k05msku4u7m" path="res://Logos/DragonBlue.png" id="7_nii28"]
+[ext_resource type="PackedScene" uid="uid://i1pysgga0re7" path="res://PreFabs/TextButton.tscn" id="8_ethub"]
 [ext_resource type="Script" uid="uid://bpvarefuv6hth" path="res://Script/IconRandomizer.gd" id="8_r3dr4"]
 [ext_resource type="FontFile" uid="uid://bwdtnm6evwpkl" path="res://Fonts/vhs-vcr-osd.ttf" id="9_x6x8t"]
 [ext_resource type="Texture2D" uid="uid://ceff25ld1xkoq" path="res://Sprites/SlideArrowBlock.png" id="10_ethub"]
@@ -45,7 +46,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SubViewport" type="SubViewport" parent="UI/SubViewportContainer" unique_id=1261541117]
+handle_input_locally = false
 size = Vector2i(1280, 720)
+render_target_update_mode = 4
 
 [node name="Camera" type="Camera3D" parent="UI/SubViewportContainer/SubViewport" unique_id=842823936]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
@@ -66,8 +69,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="MainMenu" type="Control" parent="UI/Menus" unique_id=1246409895]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -97,16 +102,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("12_h6qgc")
 
-[node name="Icon" type="TextureRect" parent="UI/Menus/MainMenu/Header" unique_id=1060380733]
-layout_mode = 1
-offset_left = 10.0
-offset_right = 190.0
-offset_bottom = 180.0
-texture = ExtResource("7_nii28")
-expand_mode = 1
-script = ExtResource("8_r3dr4")
-
-[node name="Title" type="Label" parent="UI/Menus/MainMenu/Header" unique_id=1091930833]
+[node name="LogoTitle" type="Label" parent="UI/Menus/MainMenu/Header" unique_id=1091930833]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 5
@@ -122,7 +118,7 @@ theme_override_font_sizes/font_size = 31
 text = "FREELANCE GAME DEVELOPMENT"
 horizontal_alignment = 1
 
-[node name="Subtitle" type="Label" parent="UI/Menus/MainMenu/Header" unique_id=337603898]
+[node name="LogoSub" type="Label" parent="UI/Menus/MainMenu/Header" unique_id=337603898]
 modulate = Color(0, 0.3254902, 0.5568628, 1)
 layout_mode = 1
 anchors_preset = 5
@@ -157,35 +153,257 @@ theme_override_font_sizes/font_size = 31
 text = "THIS WEBPAGE IS STILL IN DEVELOPMENT"
 horizontal_alignment = 1
 
-[node name="GameMenu" type="Control" parent="UI/Menus" unique_id=1800640921]
-visible = false
-anchors_preset = 0
+[node name="GameMenu" type="Control" parent="UI/Menus" unique_id=1241410643]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Header" type="Node3D" parent="UI/Menus/GameMenu" unique_id=555420804]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.371, 0)
-visible = false
+[node name="Header" type="Control" parent="UI/Menus/GameMenu" unique_id=1774806083]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 160.0
+grow_horizontal = 2
 
-[node name="Bar" type="Sprite3D" parent="UI/Menus/GameMenu/Header" unique_id=735221423]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6178352, -0.1913673, 0)
-centered = false
-texture_filter = 0
+[node name="Icon" type="TextureRect" parent="UI/Menus/GameMenu/Header" unique_id=130668796]
+layout_mode = 1
+offset_left = 10.0
+offset_right = 190.0
+offset_bottom = 180.0
+texture = ExtResource("7_nii28")
+expand_mode = 1
+script = ExtResource("8_r3dr4")
+
+[node name="Underline" type="TextureRect" parent="UI/Menus/GameMenu/Header" unique_id=2114134063]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.014
+anchor_bottom = 1.4870001
+offset_left = 175.0
+offset_top = 158.0
+offset_right = 0.079956055
+offset_bottom = 0.07998657
+grow_vertical = 0
 texture = ExtResource("11_71v2r")
 
-[node name="TitleText" type="Label3D" parent="UI/Menus/GameMenu/Header" unique_id=1579545706]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.606397, -0.11044955, 0)
+[node name="PageTitle" type="Label" parent="UI/Menus/GameMenu/Header" unique_id=2015099915]
 modulate = Color(0, 0, 0, 1)
-outline_modulate = Color(1, 1, 1, 1)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 183.0
+offset_top = -139.0
+offset_right = 787.0
+offset_bottom = 143.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("9_x6x8t")
+theme_override_font_sizes/font_size = 95
 text = "GAMES"
-font = ExtResource("9_x6x8t")
-font_size = 150
-outline_size = 0
-horizontal_alignment = 0
+vertical_alignment = 2
 
-[node name="OffsetCenter" type="Node3D" parent="UI/Menus/GameMenu/Header" unique_id=1614113730]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.123, 0, 0)
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/Menus/GameMenu" unique_id=691094914]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 182.0
+offset_top = 215.0
+offset_right = -6.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
 
-[node name="GameList" type="Node3D" parent="UI/Menus/GameMenu" unique_id=436010090]
-visible = false
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Menus/GameMenu/ScrollContainer" unique_id=1025635462]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GameBox" type="Control" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer" unique_id=1860413005]
+custom_minimum_size = Vector2(1062, 100)
+layout_mode = 2
+
+[node name="Outline" type="ColorRect" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer/GameBox" unique_id=370013943]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.7106835, 0, 1)
+
+[node name="Background" type="ColorRect" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer/GameBox" unique_id=1554634691]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -11.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameBox2" type="Control" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer" unique_id=537455894]
+custom_minimum_size = Vector2(1062, 100)
+layout_mode = 2
+
+[node name="Outline" type="ColorRect" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer/GameBox2" unique_id=1975777580]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.7106835, 0, 1)
+
+[node name="Background" type="ColorRect" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer/GameBox2" unique_id=118216402]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -11.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameBox3" type="Control" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer" unique_id=1804035287]
+custom_minimum_size = Vector2(1062, 100)
+layout_mode = 2
+
+[node name="Outline" type="ColorRect" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer/GameBox3" unique_id=1878334788]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.7106835, 0, 1)
+
+[node name="Background" type="ColorRect" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer/GameBox3" unique_id=152578517]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -11.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameBox4" type="Control" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer" unique_id=942520049]
+custom_minimum_size = Vector2(1062, 100)
+layout_mode = 2
+
+[node name="Outline" type="ColorRect" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer/GameBox4" unique_id=1347147087]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.7106835, 0, 1)
+
+[node name="Background" type="ColorRect" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer/GameBox4" unique_id=872477514]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -11.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameBox5" type="Control" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer" unique_id=2011007530]
+custom_minimum_size = Vector2(1062, 100)
+layout_mode = 2
+
+[node name="Outline" type="ColorRect" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer/GameBox5" unique_id=637830473]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.7106835, 0, 1)
+
+[node name="Background" type="ColorRect" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer/GameBox5" unique_id=561734513]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -11.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameBox6" type="Control" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer" unique_id=2115549110]
+custom_minimum_size = Vector2(1062, 100)
+layout_mode = 2
+
+[node name="Outline" type="ColorRect" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer/GameBox6" unique_id=587972067]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.7106835, 0, 1)
+
+[node name="Background" type="ColorRect" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer/GameBox6" unique_id=1735703421]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -11.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameBox7" type="Control" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer" unique_id=1853108506]
+custom_minimum_size = Vector2(1062, 100)
+layout_mode = 2
+
+[node name="Outline" type="ColorRect" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer/GameBox7" unique_id=1930549786]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.7106835, 0, 1)
+
+[node name="Background" type="ColorRect" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer/GameBox7" unique_id=926412181]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -11.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Special" type="Control" parent="UI" unique_id=1882316281]
 layout_mode = 1
@@ -194,14 +412,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="PageSelector" type="Control" parent="UI/Special" unique_id=1393571315]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = 15.0
+offset_left = 8.5
 offset_top = 165.0
-offset_right = 185.0
+offset_right = 178.5
 offset_bottom = -15.0
 grow_vertical = 2
 script = ExtResource("7_h6qgc")
@@ -247,6 +466,55 @@ theme_override_font_sizes/font_size = 32
 text = "PAGES"
 horizontal_alignment = 1
 
+[node name="Options" type="Control" parent="UI/Special/PageSelector" unique_id=1125704312]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HomeButton" parent="UI/Special/PageSelector/Options" unique_id=573627997 instance=ExtResource("8_ethub")]
+layout_mode = 1
+anchors_preset = 5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = -57.0
+offset_top = 70.0
+offset_right = 73.0
+offset_bottom = 110.0
+grow_vertical = 1
+scale = Vector2(0.85, 0.85)
+menuTarget = "MainMenu"
+buttonText = "HOME"
+
+[node name="GameButton" parent="UI/Special/PageSelector/Options" unique_id=2100932830 instance=ExtResource("8_ethub")]
+layout_mode = 1
+anchors_preset = 5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = -57.0
+offset_top = 100.0
+offset_right = 73.0
+offset_bottom = 140.0
+grow_vertical = 1
+scale = Vector2(0.85, 0.85)
+menuTarget = "GameMenu"
+buttonText = "GAMES"
+
+[node name="CVButton" parent="UI/Special/PageSelector/Options" unique_id=498051442 instance=ExtResource("8_ethub")]
+layout_mode = 1
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -40.0
+offset_right = 73.0
+offset_bottom = 0.0
+grow_vertical = 0
+scale = Vector2(0.85, 0.85)
+buttonText = "MY CV"
+
 [node name="Startup" type="Control" parent="UI/Special" unique_id=1596506376]
 visible = false
 layout_mode = 1
@@ -255,6 +523,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Logo" type="TextureRect" parent="UI/Special/Startup" unique_id=1663573817]
 layout_mode = 1
@@ -278,6 +547,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("2_aikl4")
 
 [node name="ArrowBlock" type="TextureRect" parent="UI/Special/Transition" unique_id=1094395577]
@@ -291,3 +561,7 @@ offset_right = 720.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_ethub")
+
+[connection signal="ButtonChangeMenu" from="UI/Special/PageSelector/Options/HomeButton" to="UI/Special/Transition" method="RequestTransition"]
+[connection signal="ButtonChangeMenu" from="UI/Special/PageSelector/Options/GameButton" to="UI/Special/Transition" method="RequestTransition"]
+[connection signal="ButtonPressed" from="UI/Special/PageSelector/Options/CVButton" to="UI/Special/PageSelector" method="OpenCVLink"]
