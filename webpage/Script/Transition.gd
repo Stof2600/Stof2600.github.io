@@ -1,17 +1,16 @@
-extends Node3D
+extends Control
 class_name Transition
 
-@onready var startScreen: Node3D = $"../Startup"
-@onready var arrows: = [$TransitionArrow1, $TransitionArrow2, $TransitionArrow3, $TransitionArrow4, $TransitionArrow5]
-@onready var menuList: MenuList = $"../MenuList"
+@onready var startScreen: Control = $"../Startup"
+@onready var arrowBlock: TextureRect = $ArrowBlock
+@onready var menuList: MenuList = $"../../../MenuList"
 @export var bootTimer: float = 0.5
 ##is double of what you input due to quickly written code
 @export var transitionTimer: float = 1
 
-@export var arrowStartPos: float = -2.5
-@export var arrowCutPos: float = 0
-@export var arrowEndPos: float = 2.5
-@export var arrowOffset: float = 0.5
+@export var arrowStartPos: float = -2800
+@export var arrowCutPos: float = -800
+@export var arrowEndPos: float = 1280
 
 var tt: float = 0
 
@@ -46,18 +45,10 @@ func Transition(delta: float) -> void:
 		return
 	
 	#move arrows for transition
-	for i in arrows.size():
-		var a = arrows[i]
-		a.visible = true
-		
-		if a.position.x < 0 && transitionUp:
-			var start = arrowStartPos - (arrowOffset * i)
-			var end = arrowEndPos + (arrowOffset * (arrows.size() - 1))
-			a.position.x = lerp(start, end, tt / transitionTimer)
-		elif a.position.x < arrowEndPos && !transitionUp:
-			var end = arrowEndPos + (arrowOffset * (arrows.size() - i))
-			a.position.x = lerp(end, arrowCutPos, tt / transitionTimer)
-			pass
+	if transitionUp:
+		arrowBlock.position.x = lerp(arrowStartPos, arrowCutPos, tt / transitionTimer)
+	elif !transitionUp:
+		arrowBlock.position.x = lerp(arrowEndPos, arrowCutPos, tt / transitionTimer)
 	
 	#update timer for transition
 	if tt > transitionTimer && transitionUp:
@@ -89,9 +80,8 @@ func ResetTransition() -> void:
 	transitionUp = true
 	doTransition = false
 	
-	for a in arrows:
-		a.visible = false
-		a.position.x = arrowStartPos
+	arrowBlock.visible = false
+	arrowBlock.position.x = arrowStartPos
 	
 	pass
 
@@ -99,3 +89,4 @@ func RequestTransition(menuName: String):
 	if doTransition || (menuList.lastActive.name.to_lower() == menuName.to_lower() && !doIntro): return
 	doTransition = true
 	menuToLoad = menuName
+	arrowBlock.visible = true

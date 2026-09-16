@@ -1,21 +1,17 @@
 [gd_scene format=3 uid="uid://bc1x3t8nhiict"]
 
 [ext_resource type="Script" uid="uid://swc0koywclt4" path="res://Script/MenuList.gd" id="1_ketcf"]
-[ext_resource type="Texture2D" uid="uid://cj4utv2hert6y" path="res://Logos/NameLogo.png" id="1_v1m0x"]
-[ext_resource type="Texture2D" uid="uid://cle3ddwmjhaxv" path="res://Sprites/Square.png" id="2_3ua6x"]
 [ext_resource type="Script" uid="uid://bwlpjn0twh0sg" path="res://Script/Transition.gd" id="2_aikl4"]
-[ext_resource type="Texture2D" uid="uid://cxjd0wvxgngtj" path="res://Sprites/SlideArrowEnd.png" id="3_aikl4"]
-[ext_resource type="Texture2D" uid="uid://t8ghk0rngx1t" path="res://Sprites/SlideArrowStart.png" id="4_ketcf"]
 [ext_resource type="Script" uid="uid://ogaiji4lk2sh" path="res://Script/PageSelector.gd" id="7_h6qgc"]
 [ext_resource type="Texture2D" uid="uid://c1k05msku4u7m" path="res://Logos/DragonBlue.png" id="7_nii28"]
-[ext_resource type="PackedScene" uid="uid://i1pysgga0re7" path="res://PreFabs/TextButton.tscn" id="8_ethub"]
 [ext_resource type="Script" uid="uid://bpvarefuv6hth" path="res://Script/IconRandomizer.gd" id="8_r3dr4"]
 [ext_resource type="FontFile" uid="uid://bwdtnm6evwpkl" path="res://Fonts/vhs-vcr-osd.ttf" id="9_x6x8t"]
+[ext_resource type="Texture2D" uid="uid://ceff25ld1xkoq" path="res://Sprites/SlideArrowBlock.png" id="10_ethub"]
 [ext_resource type="Texture2D" uid="uid://cc8txoar22f12" path="res://Sprites/UnderLine.png" id="11_71v2r"]
+[ext_resource type="Texture2D" uid="uid://c6r0fgrtlkqvd" path="res://Logos/NameLogoXL.png" id="12_h6qgc"]
 
 [sub_resource type="Environment" id="Environment_853f1"]
 background_mode = 1
-background_color = Color(1, 1, 1, 1)
 ambient_light_source = 1
 
 [node name="Index" type="Node" unique_id=736270624]
@@ -25,238 +21,157 @@ ambient_light_source = 1
 [node name="WorldEnvironment" type="WorldEnvironment" parent="BaseWorld" unique_id=982803425]
 environment = SubResource("Environment_853f1")
 
-[node name="Camera3D" type="Camera3D" parent="BaseWorld" unique_id=842823936]
+[node name="MenuList" type="Node" parent="." unique_id=1318627938 node_paths=PackedStringArray("Menus", "pageSelect")]
+script = ExtResource("1_ketcf")
+Menus = [NodePath("../UI/Menus/MainMenu"), NodePath("../UI/Menus/GameMenu")]
+pageSelect = NodePath("../UI/Special/PageSelector")
+
+[node name="UI" type="Control" parent="." unique_id=1509525968]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="UI" unique_id=1674280737]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="UI/SubViewportContainer" unique_id=1261541117]
+size = Vector2i(1280, 720)
+
+[node name="Camera" type="Camera3D" parent="UI/SubViewportContainer/SubViewport" unique_id=842823936]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 projection = 1
 
-[node name="MenuList" type="Node" parent="." unique_id=1318627938 node_paths=PackedStringArray("Menus", "pageSelect")]
-script = ExtResource("1_ketcf")
-Menus = [NodePath("../MainMenu"), NodePath("../GameMenu")]
-pageSelect = NodePath("../PageSelector")
+[node name="Background" type="ColorRect" parent="UI" unique_id=122789107]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Transition" type="Node3D" parent="." unique_id=465173162]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6)
-script = ExtResource("2_aikl4")
+[node name="Menus" type="Control" parent="UI" unique_id=1711625131]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="TransitionArrow1" type="Node3D" parent="Transition" unique_id=423881755]
-transform = Transform3D(1, 0, 0, 0, 1.32, 0, 0, 0, 1, -2.5, 0.42, 0)
+[node name="MainMenu" type="Control" parent="UI/Menus" unique_id=1246409895]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Square" type="Sprite3D" parent="Transition/TransitionArrow1" unique_id=958153535]
-transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
-modulate = Color(0, 0, 0, 1)
-texture_filter = 0
-texture = ExtResource("2_3ua6x")
+[node name="Header" type="Control" parent="UI/Menus/MainMenu" unique_id=525101289]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 160.0
+grow_horizontal = 2
 
-[node name="Start" type="Sprite3D" parent="Transition/TransitionArrow1" unique_id=1707660713]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 1, 0, 0)
-modulate = Color(0, 0, 0, 1)
-texture_filter = 0
-texture = ExtResource("3_aikl4")
+[node name="Logo" type="TextureRect" parent="UI/Menus/MainMenu/Header" unique_id=330389945]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -307.273
+offset_top = -65.41
+offset_right = 307.2724
+offset_bottom = 103.59
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_h6qgc")
 
-[node name="End" type="Sprite3D" parent="Transition/TransitionArrow1" unique_id=1980297986]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -1, 0, 0)
-modulate = Color(0, 0, 0, 1)
-texture_filter = 0
-texture = ExtResource("4_ketcf")
-
-[node name="TransitionArrow2" type="Node3D" parent="Transition" unique_id=855532330]
-transform = Transform3D(1, 0, 0, 0, 1.32, 0, 0, 0, 1, -2.5, 0.21, 0)
-
-[node name="Square" type="Sprite3D" parent="Transition/TransitionArrow2" unique_id=2085585111]
-transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
-modulate = Color(0, 0, 0, 1)
-texture_filter = 0
-texture = ExtResource("2_3ua6x")
-
-[node name="Start" type="Sprite3D" parent="Transition/TransitionArrow2" unique_id=1585859327]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 1, 0, 0)
-modulate = Color(0, 0, 0, 1)
-texture_filter = 0
-texture = ExtResource("3_aikl4")
-
-[node name="End" type="Sprite3D" parent="Transition/TransitionArrow2" unique_id=200471152]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -1, 0, 0)
-modulate = Color(0, 0, 0, 1)
-texture_filter = 0
-texture = ExtResource("4_ketcf")
-
-[node name="TransitionArrow3" type="Node3D" parent="Transition" unique_id=574051837]
-transform = Transform3D(1, 0, 0, 0, 1.32, 0, 0, 0, 1, -2.5, 0, 0)
-
-[node name="Square" type="Sprite3D" parent="Transition/TransitionArrow3" unique_id=113142061]
-transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
-modulate = Color(0, 0, 0, 1)
-texture_filter = 0
-texture = ExtResource("2_3ua6x")
-
-[node name="Start" type="Sprite3D" parent="Transition/TransitionArrow3" unique_id=636491152]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 1, 0, 0)
-modulate = Color(0, 0, 0, 1)
-texture_filter = 0
-texture = ExtResource("3_aikl4")
-
-[node name="End" type="Sprite3D" parent="Transition/TransitionArrow3" unique_id=728940476]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -1, 0, 0)
-modulate = Color(0, 0, 0, 1)
-texture_filter = 0
-texture = ExtResource("4_ketcf")
-
-[node name="TransitionArrow4" type="Node3D" parent="Transition" unique_id=618737781]
-transform = Transform3D(1, 0, 0, 0, 1.32, 0, 0, 0, 1, -2.5, -0.21, 0)
-
-[node name="Square" type="Sprite3D" parent="Transition/TransitionArrow4" unique_id=90174477]
-transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
-modulate = Color(0, 0, 0, 1)
-texture_filter = 0
-texture = ExtResource("2_3ua6x")
-
-[node name="Start" type="Sprite3D" parent="Transition/TransitionArrow4" unique_id=1884042691]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 1, 0, 0)
-modulate = Color(0, 0, 0, 1)
-texture_filter = 0
-texture = ExtResource("3_aikl4")
-
-[node name="End" type="Sprite3D" parent="Transition/TransitionArrow4" unique_id=1375299978]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -1, 0, 0)
-modulate = Color(0, 0, 0, 1)
-texture_filter = 0
-texture = ExtResource("4_ketcf")
-
-[node name="TransitionArrow5" type="Node3D" parent="Transition" unique_id=1760661226]
-transform = Transform3D(1, 0, 0, 0, 1.32, 0, 0, 0, 1, -2.5, -0.42, 0)
-
-[node name="Square" type="Sprite3D" parent="Transition/TransitionArrow5" unique_id=2001710795]
-transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
-modulate = Color(0, 0, 0, 1)
-texture_filter = 0
-texture = ExtResource("2_3ua6x")
-
-[node name="Start" type="Sprite3D" parent="Transition/TransitionArrow5" unique_id=1181261318]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 1, 0, 0)
-modulate = Color(0, 0, 0, 1)
-texture_filter = 0
-texture = ExtResource("3_aikl4")
-
-[node name="End" type="Sprite3D" parent="Transition/TransitionArrow5" unique_id=1862081298]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -1, 0, 0)
-modulate = Color(0, 0, 0, 1)
-texture_filter = 0
-texture = ExtResource("4_ketcf")
-
-[node name="Startup" type="Node3D" parent="." unique_id=696735724]
-visible = false
-
-[node name="Logo" type="Sprite3D" parent="Startup" unique_id=523537050]
-alpha_cut = 1
-texture_filter = 0
-texture = ExtResource("1_v1m0x")
-
-[node name="PageSelector" type="Node3D" parent="." unique_id=979400463]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.76, -0.110008, 0)
-script = ExtResource("7_h6qgc")
-
-[node name="Design" type="Node3D" parent="PageSelector" unique_id=399977226]
-
-[node name="Title" type="Label3D" parent="PageSelector/Design" unique_id=1742227570]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.301, 0.02)
-modulate = Color(0, 0, 0, 1)
-outline_modulate = Color(1, 1, 1, 1)
-text = "PAGES"
-font = ExtResource("9_x6x8t")
-
-[node name="Outline" type="Sprite3D" parent="PageSelector/Design" unique_id=664689706]
-transform = Transform3D(0.72, 0, 0, 0, 2.325, 0, 0, 0, 1, 0, 0, 0)
-modulate = Color(0, 0.33333334, 0.54901963, 1)
-texture_filter = 0
-texture = ExtResource("2_3ua6x")
-
-[node name="Background" type="Sprite3D" parent="PageSelector/Design" unique_id=2026681836]
-transform = Transform3D(0.64, 0, 0, 0, 2.245, 0, 0, 0, 1, 0, 0, 0.01)
-texture_filter = 0
-texture = ExtResource("2_3ua6x")
-
-[node name="Options" type="Node3D" parent="PageSelector" unique_id=437510063]
-
-[node name="MainPage" parent="PageSelector/Options" unique_id=1400870267 instance=ExtResource("8_ethub")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24305625, 0.034240723)
-labetText = "HOME"
-menuTarget = "MainMenu"
-
-[node name="GamePage" parent="PageSelector/Options" unique_id=838074673 instance=ExtResource("8_ethub")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18961526, 0.03)
-labetText = "GAMES"
-menuTarget = "GameMenu"
-
-[node name="CVLink" parent="PageSelector/Options" unique_id=926751880 instance=ExtResource("8_ethub")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33264458, 0.03)
-labetText = "MY CV"
-
-[node name="MainMenu" type="Node3D" parent="." unique_id=1891476941]
-
-[node name="Header" type="Node3D" parent="MainMenu" unique_id=1155214111]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.371, 0)
-
-[node name="Icon" type="Sprite3D" parent="MainMenu/Header" unique_id=682517448]
-transform = Transform3D(0.695, 0, 0, 0, 0.695, 0, 0, 0, 0.695, -0.0024114847, -0.0002837479, 0)
-alpha_cut = 1
-texture_filter = 0
-texture = ExtResource("1_v1m0x")
-
-[node name="TitleText" type="Label3D" parent="MainMenu/Header" unique_id=554113823]
-transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 0, -0.07844475, 0)
-modulate = Color(0, 0, 0, 1)
-outline_modulate = Color(1, 1, 1, 1)
-text = "FREELANCE GAME DEVELOMENT"
-font = ExtResource("9_x6x8t")
-vertical_alignment = 0
-
-[node name="TitleSubtext" type="Label3D" parent="MainMenu/Header" unique_id=1425914899]
-transform = Transform3D(0.17, 0, 0, 0, 0.17, 0, 0, 0, 0.17, 0, -0.12884405, 0)
-modulate = Color(0, 0.33333334, 0.54901963, 1)
-outline_modulate = Color(1, 1, 1, 1)
-text = "BY STEF SCHOUTEN"
-font = ExtResource("9_x6x8t")
-vertical_alignment = 0
-
-[node name="BonusText" type="Label3D" parent="MainMenu" unique_id=581731880]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.8856743, -0.4708647, 0)
-modulate = Color(0, 0, 0, 1)
-outline_modulate = Color(1, 1, 1, 1)
-text = "IGNORE THE BORDER
-I'M NOT A WEB DEV"
-font_size = 20
-outline_size = 0
-horizontal_alignment = 2
-
-[node name="TitleText" type="Label3D" parent="MainMenu" unique_id=1321888650]
-transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 0, 0.11073151, 0)
-modulate = Color(1, 0, 0, 1)
-outline_modulate = Color(1, 1, 1, 1)
-text = "THIS WEBSITE IS STILL
-IN ACTIVE DEVELOPMENT"
-font = ExtResource("9_x6x8t")
-vertical_alignment = 0
-line_spacing = -51.64
-
-[node name="GameMenu" type="Node3D" parent="." unique_id=615607661]
-visible = false
-
-[node name="Header" type="Node3D" parent="GameMenu" unique_id=555420804]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.371, 0)
-
-[node name="Icon" type="Sprite3D" parent="GameMenu/Header" unique_id=177116863]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7600461, -0.0002837479, 0)
-texture_filter = 0
+[node name="Icon" type="TextureRect" parent="UI/Menus/MainMenu/Header" unique_id=1060380733]
+layout_mode = 1
+offset_left = 10.0
+offset_right = 190.0
+offset_bottom = 180.0
 texture = ExtResource("7_nii28")
+expand_mode = 1
 script = ExtResource("8_r3dr4")
 
-[node name="Bar" type="Sprite3D" parent="GameMenu/Header" unique_id=735221423]
+[node name="Title" type="Label" parent="UI/Menus/MainMenu/Header" unique_id=1091930833]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 170.0
+offset_right = 304.0
+offset_bottom = 260.00006
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("9_x6x8t")
+theme_override_font_sizes/font_size = 31
+text = "FREELANCE GAME DEVELOPMENT"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="UI/Menus/MainMenu/Header" unique_id=337603898]
+modulate = Color(0, 0.3254902, 0.5568628, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 203.0
+offset_right = 304.0
+offset_bottom = 293.00006
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("9_x6x8t")
+theme_override_font_sizes/font_size = 24
+text = "BY STEF SCHOUTEN"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="UI/Menus/MainMenu" unique_id=1406300830]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -419.0
+offset_top = -45.00003
+offset_right = 419.0
+offset_bottom = 45.00003
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_x6x8t")
+theme_override_font_sizes/font_size = 31
+text = "THIS WEBPAGE IS STILL IN DEVELOPMENT"
+horizontal_alignment = 1
+
+[node name="GameMenu" type="Control" parent="UI/Menus" unique_id=1800640921]
+visible = false
+anchors_preset = 0
+
+[node name="Header" type="Node3D" parent="UI/Menus/GameMenu" unique_id=555420804]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.371, 0)
+visible = false
+
+[node name="Bar" type="Sprite3D" parent="UI/Menus/GameMenu/Header" unique_id=735221423]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6178352, -0.1913673, 0)
 centered = false
 texture_filter = 0
 texture = ExtResource("11_71v2r")
 
-[node name="TitleText" type="Label3D" parent="GameMenu/Header" unique_id=1579545706]
+[node name="TitleText" type="Label3D" parent="UI/Menus/GameMenu/Header" unique_id=1579545706]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.606397, -0.11044955, 0)
 modulate = Color(0, 0, 0, 1)
 outline_modulate = Color(1, 1, 1, 1)
@@ -266,11 +181,113 @@ font_size = 150
 outline_size = 0
 horizontal_alignment = 0
 
-[node name="OffsetCenter" type="Node3D" parent="GameMenu/Header" unique_id=1614113730]
+[node name="OffsetCenter" type="Node3D" parent="UI/Menus/GameMenu/Header" unique_id=1614113730]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.123, 0, 0)
 
-[node name="GameList" type="Node3D" parent="GameMenu" unique_id=436010090]
+[node name="GameList" type="Node3D" parent="UI/Menus/GameMenu" unique_id=436010090]
+visible = false
 
-[connection signal="ButtonChangeMenu" from="PageSelector/Options/MainPage" to="Transition" method="RequestTransition"]
-[connection signal="ButtonChangeMenu" from="PageSelector/Options/GamePage" to="Transition" method="RequestTransition"]
-[connection signal="ButtonPressed" from="PageSelector/Options/CVLink" to="PageSelector" method="OpenCVLink"]
+[node name="Special" type="Control" parent="UI" unique_id=1882316281]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PageSelector" type="Control" parent="UI/Special" unique_id=1393571315]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 165.0
+offset_right = 185.0
+offset_bottom = -15.0
+grow_vertical = 2
+script = ExtResource("7_h6qgc")
+
+[node name="Design" type="Control" parent="UI/Special/PageSelector" unique_id=1794644466]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Outline" type="ColorRect" parent="UI/Special/PageSelector/Design" unique_id=2069501789]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.33333334, 0.54901963, 1)
+
+[node name="Background" type="ColorRect" parent="UI/Special/PageSelector/Design" unique_id=1901033009]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="UI/Special/PageSelector/Design" unique_id=1770275651]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 90.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("9_x6x8t")
+theme_override_font_sizes/font_size = 32
+text = "PAGES"
+horizontal_alignment = 1
+
+[node name="Startup" type="Control" parent="UI/Special" unique_id=1596506376]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Logo" type="TextureRect" parent="UI/Special/Startup" unique_id=1663573817]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -465.0
+offset_top = -117.0
+offset_right = 465.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_h6qgc")
+
+[node name="Transition" type="Control" parent="UI/Special" unique_id=1527624377]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_aikl4")
+
+[node name="ArrowBlock" type="TextureRect" parent="UI/Special/Transition" unique_id=1094395577]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -800.0
+offset_right = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_ethub")

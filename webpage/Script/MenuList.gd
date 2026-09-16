@@ -1,10 +1,10 @@
 extends Node
 class_name MenuList
 
-@export var Menus: Array[Node3D]
-@export var pageSelect: Node3D
+@export var Menus: Array[Control]
+@export var pageSelect: Control
 
-var lastActive: Node3D
+var lastActive: Control
 
 func _ready() -> void:
 	lastActive = Menus[0]

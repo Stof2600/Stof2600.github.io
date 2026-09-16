@@ -1,4 +1,4 @@
-extends Sprite3D
+extends TextureRect
 
 #random chance done by just inserting the regular one a lot
 #also known as terrible code
@@ -11,7 +11,3 @@ extends Sprite3D
 func _ready() -> void:
 	texture = load(iconSprites[randi_range(0, iconSprites.size() - 1)])
 	pass
-
-func _process(delta: float) -> void:
-	if Input.is_key_pressed(KEY_SPACE):
-		texture = load(iconSprites[randi_range(0, iconSprites.size() - 1)])
