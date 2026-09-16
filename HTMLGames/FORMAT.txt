@@ -5,4 +5,5 @@ Set the gameName variable in godot as its written on the HTML file
 	etc..
 
 include the icon.png file, make sure its all lower case
+include a descr.txt file, again lower case (51 character max)
 

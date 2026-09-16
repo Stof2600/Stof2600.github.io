@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" uid="uid://swc0koywclt4" path="res://Script/MenuList.gd" id="1_ketcf"]
 [ext_resource type="Script" uid="uid://bwlpjn0twh0sg" path="res://Script/Transition.gd" id="2_aikl4"]
-[ext_resource type="Script" uid="uid://dmgfrk2yvjsbd" path="res://Script/GameBox.gd" id="7_d4fer"]
+[ext_resource type="PackedScene" uid="uid://b6mwmjg5jc4pu" path="res://PreFabs/GameBox.tscn" id="7_71v2r"]
 [ext_resource type="Script" uid="uid://ogaiji4lk2sh" path="res://Script/PageSelector.gd" id="7_h6qgc"]
 [ext_resource type="Texture2D" uid="uid://c1k05msku4u7m" path="res://Logos/DragonBlue.png" id="7_nii28"]
 [ext_resource type="PackedScene" uid="uid://i1pysgga0re7" path="res://PreFabs/TextButton.tscn" id="8_ethub"]
-[ext_resource type="Texture2D" uid="uid://bnoy65qny8nv8" path="res://icon.svg" id="8_lhddn"]
 [ext_resource type="Script" uid="uid://bpvarefuv6hth" path="res://Script/IconRandomizer.gd" id="8_r3dr4"]
 [ext_resource type="FontFile" uid="uid://bwdtnm6evwpkl" path="res://Fonts/vhs-vcr-osd.ttf" id="9_x6x8t"]
 [ext_resource type="Texture2D" uid="uid://ceff25ld1xkoq" path="res://Sprites/SlideArrowBlock.png" id="10_ethub"]
@@ -225,57 +224,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="GameBox" type="Control" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer" unique_id=1860413005]
-custom_minimum_size = Vector2(1062, 100)
+[node name="GameBox" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer" unique_id=363067136 instance=ExtResource("7_71v2r")]
 layout_mode = 2
-script = ExtResource("7_d4fer")
-
-[node name="Outline" type="ColorRect" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer/GameBox" unique_id=370013943]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -6.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0.7106835, 0, 1)
-
-[node name="Background" type="ColorRect" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer/GameBox" unique_id=1554634691]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = -11.0
-offset_bottom = -5.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="GameIcon" type="TextureRect" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer/GameBox" unique_id=991644523]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 10.0
-offset_top = -40.0
-offset_right = 90.0
-offset_bottom = 40.0
-grow_vertical = 2
-texture = ExtResource("8_lhddn")
-expand_mode = 1
-
-[node name="PlayButton" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer/GameBox" unique_id=573627997 instance=ExtResource("8_ethub")]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -147.0
-offset_top = -20.0
-offset_right = -17.00122
-offset_bottom = 20.0
-grow_horizontal = 0
-buttonText = "PLAY"
 
 [node name="Special" type="Control" parent="UI" unique_id=1882316281]
 layout_mode = 1
@@ -434,7 +384,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_ethub")
 
-[connection signal="ButtonPressed" from="UI/Menus/GameMenu/ScrollContainer/VBoxContainer/GameBox/PlayButton" to="UI/Menus/GameMenu/ScrollContainer/VBoxContainer/GameBox" method="PlayGame"]
 [connection signal="ButtonChangeMenu" from="UI/Special/PageSelector/Options/HomeButton" to="UI/Special/Transition" method="RequestTransition"]
 [connection signal="ButtonChangeMenu" from="UI/Special/PageSelector/Options/GameButton" to="UI/Special/Transition" method="RequestTransition"]
 [connection signal="ButtonPressed" from="UI/Special/PageSelector/Options/CVButton" to="UI/Special/PageSelector" method="OpenCVLink"]

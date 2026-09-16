@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://b6mwmjg5jc4pu"]
+
+[ext_resource type="Script" uid="uid://dmgfrk2yvjsbd" path="res://Script/GameBox.gd" id="1_sx61k"]
+[ext_resource type="Texture2D" uid="uid://bnoy65qny8nv8" path="res://icon.svg" id="2_gexaw"]
+[ext_resource type="PackedScene" uid="uid://i1pysgga0re7" path="res://PreFabs/TextButton.tscn" id="3_f2a8p"]
+[ext_resource type="FontFile" uid="uid://bwdtnm6evwpkl" path="res://Fonts/vhs-vcr-osd.ttf" id="4_gexaw"]
+
+[node name="GameBox" type="Control" unique_id=363067136]
+custom_minimum_size = Vector2(1062, 100)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_sx61k")
+
+[node name="Outline" type="ColorRect" parent="." unique_id=116492703]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.7106835, 0, 1)
+
+[node name="Background" type="ColorRect" parent="." unique_id=748171142]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -11.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameIcon" type="TextureRect" parent="." unique_id=1465424810]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -40.0
+offset_right = 90.0
+offset_bottom = 40.0
+grow_vertical = 2
+texture = ExtResource("2_gexaw")
+expand_mode = 1
+
+[node name="PlayButton" parent="." unique_id=573627997 instance=ExtResource("3_f2a8p")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -147.0
+offset_top = -20.0
+offset_right = -17.00122
+offset_bottom = 20.0
+grow_horizontal = 0
+buttonText = "PLAY"
+
+[node name="GameName" type="Label" parent="." unique_id=975724948]
+self_modulate = Color(0, 0, 0, 1)
+custom_maximum_size = Vector2(700, -1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -237.0
+offset_top = -4.815
+offset_right = 237.0
+offset_bottom = 80.185
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_gexaw")
+theme_override_font_sizes/font_size = 30
+text = "REALLY COOL GAME NAME"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="." unique_id=1346726078]
+self_modulate = Color(0, 0, 0, 1)
+custom_maximum_size = Vector2(700, -1)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -33.675003
+offset_bottom = -5.675003
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "1234567890123456789012345678901234567890123456789012345678901"
+horizontal_alignment = 1
+text_overrun_behavior = 1
+
+[connection signal="ButtonPressed" from="PlayButton" to="." method="PlayGame"]
