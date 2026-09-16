@@ -19,8 +19,6 @@ func _ready() -> void:
 	gameURL = baseURL + gameName
 	descURL = baseURL + "descr.txt"
 	
-	print(iconURL)
-	
 	DownloadIcon()
 	DownloadDesc()
 
@@ -59,7 +57,7 @@ func SetIcon(result, code, head, body):
 	pass
 @warning_ignore("unused_parameter")
 func SetDesc(result, code, head, body):
-	print(body)
+	descr.text = body.get_string_from_utf8().to_upper()
 	pass
 
 func PlayGame():
