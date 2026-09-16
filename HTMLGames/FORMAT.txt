@@ -1,0 +1,8 @@
+Make sure the folder name is in all caps
+Set the gameName variable in godot as its written on the HTML file
+	ADAURUM
+	StarWizard
+	etc..
+
+include the icon.png file, make sure its all lower case
+
