@@ -57,6 +57,7 @@ func SetIcon(result, code, head, body):
 	pass
 @warning_ignore("unused_parameter")
 func SetDesc(result, code, head, body):
+	if result != OK: return
 	descr.text = body.get_string_from_utf8().to_upper()
 	pass
 

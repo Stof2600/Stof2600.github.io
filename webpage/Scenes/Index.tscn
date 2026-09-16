@@ -225,7 +225,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ADAURUM" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer" unique_id=363067136 instance=ExtResource("7_71v2r")]
-visible = false
 layout_mode = 2
 
 [node name="FISHGAME" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer" unique_id=1398468597 instance=ExtResource("7_71v2r")]
@@ -233,7 +232,6 @@ layout_mode = 2
 gameName = "FishGame"
 
 [node name="STARWIZARDS" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer" unique_id=362376649 instance=ExtResource("7_71v2r")]
-visible = false
 layout_mode = 2
 gameName = "StarWizards"
 
