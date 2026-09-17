@@ -26,7 +26,7 @@ environment = SubResource("Environment_853f1")
 
 [node name="MenuList" type="Node" parent="." unique_id=1318627938 node_paths=PackedStringArray("Menus", "pageSelect")]
 script = ExtResource("1_ketcf")
-Menus = [NodePath("../UI/Menus/MainMenu"), NodePath("../UI/Menus/GameMenu")]
+Menus = [NodePath("../UI/Menus/MainMenu"), NodePath("../UI/Menus/GameMenu"), NodePath("../UI/Menus/ContactMenu")]
 pageSelect = NodePath("../UI/Special/PageSelector")
 
 [node name="UI" type="Control" parent="." unique_id=1509525968]
@@ -73,6 +73,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="MainMenu" type="Control" parent="UI/Menus" unique_id=1246409895]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -234,6 +235,99 @@ gameName = "FishGame"
 layout_mode = 2
 gameName = "StarWizards"
 
+[node name="ContactMenu" type="Control" parent="UI/Menus" unique_id=1454206741]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Control" parent="UI/Menus/ContactMenu" unique_id=1438319983]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 160.0
+grow_horizontal = 2
+
+[node name="Icon" type="TextureRect" parent="UI/Menus/ContactMenu/Header" unique_id=2138640786]
+layout_mode = 1
+offset_left = 10.0
+offset_right = 190.0
+offset_bottom = 180.0
+texture = ExtResource("7_nii28")
+expand_mode = 1
+script = ExtResource("8_r3dr4")
+
+[node name="Underline" type="TextureRect" parent="UI/Menus/ContactMenu/Header" unique_id=1818031020]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.014
+anchor_bottom = 1.4870001
+offset_left = 175.0
+offset_top = 158.0
+offset_right = 0.079956055
+offset_bottom = 0.07998657
+grow_vertical = 0
+texture = ExtResource("11_71v2r")
+
+[node name="PageTitle" type="Label" parent="UI/Menus/ContactMenu/Header" unique_id=1189865306]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 183.0
+offset_top = -139.0
+offset_right = 787.0
+offset_bottom = 143.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("9_x6x8t")
+theme_override_font_sizes/font_size = 95
+text = "CONTACT"
+vertical_alignment = 2
+
+[node name="DirectInfo" type="RichTextLabel" parent="UI/Menus/ContactMenu" unique_id=334730275]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 183.0
+offset_top = -154.94
+offset_right = 683.0
+offset_bottom = 345.06
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -29
+theme_override_fonts/bold_font = ExtResource("9_x6x8t")
+theme_override_fonts/bold_italics_font = ExtResource("9_x6x8t")
+theme_override_font_sizes/normal_font_size = 29
+theme_override_font_sizes/bold_font_size = 35
+theme_override_font_sizes/bold_italics_font_size = 28
+bbcode_enabled = true
+text = "[b]DIRECT CONTACT[/b]
+[b][i]EMAIL:[/i][/b]stof.schouten@gmail.com
+[b][i]DISCORD:[/i][/b]stof.s      /      stof#7953
+[b][i]LINKEDIN:[/i][/b]Stef Schouten
+[b][i]TEL:[/i][/b]+31(NL) 6 14588424
+[b][i]GITHUB:[/i][/b]Stof2600
+
+
+
+
+
+
+
+
+
+
+send emails or messages
+
+
+I don't take calls"
+scroll_active = false
+
 [node name="Special" type="Control" parent="UI" unique_id=1882316281]
 layout_mode = 1
 anchors_preset = 15
@@ -331,6 +425,20 @@ scale = Vector2(0.85, 0.85)
 menuTarget = "GameMenu"
 buttonText = "GAMES"
 
+[node name="ContactButton" parent="UI/Special/PageSelector/Options" unique_id=573627997 instance=ExtResource("8_ethub")]
+layout_mode = 1
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -70.0
+offset_right = 73.0
+offset_bottom = -30.001709
+grow_vertical = 0
+scale = Vector2(0.85, 0.85)
+menuTarget = "ContactMenu"
+buttonText = "CONTACT"
+
 [node name="CVButton" parent="UI/Special/PageSelector/Options" unique_id=498051442 instance=ExtResource("8_ethub")]
 layout_mode = 1
 anchors_preset = 7
@@ -393,4 +501,5 @@ texture = ExtResource("10_ethub")
 
 [connection signal="ButtonChangeMenu" from="UI/Special/PageSelector/Options/HomeButton" to="UI/Special/Transition" method="RequestTransition"]
 [connection signal="ButtonChangeMenu" from="UI/Special/PageSelector/Options/GameButton" to="UI/Special/Transition" method="RequestTransition"]
+[connection signal="ButtonChangeMenu" from="UI/Special/PageSelector/Options/ContactButton" to="UI/Special/Transition" method="RequestTransition"]
 [connection signal="ButtonPressed" from="UI/Special/PageSelector/Options/CVButton" to="UI/Special/PageSelector" method="OpenCVLink"]
