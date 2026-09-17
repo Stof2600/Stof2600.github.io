@@ -154,7 +154,6 @@ text = "THIS WEBPAGE IS STILL IN DEVELOPMENT"
 horizontal_alignment = 1
 
 [node name="GameMenu" type="Control" parent="UI/Menus" unique_id=1241410643]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -235,7 +234,12 @@ gameName = "FishGame"
 layout_mode = 2
 gameName = "StarWizards"
 
+[node name="TYPINGGAME" parent="UI/Menus/GameMenu/ScrollContainer/VBoxContainer" unique_id=29244051 instance=ExtResource("7_71v2r")]
+layout_mode = 2
+gameName = "TypingGame"
+
 [node name="ContactMenu" type="Control" parent="UI/Menus" unique_id=1454206741]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
