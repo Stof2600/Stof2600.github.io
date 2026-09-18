@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://bqaodbjb3716b"]
+
+[ext_resource type="Script" uid="uid://bsxtqfvusuef7" path="res://Script/ProjectBox.gd" id="1_hk7rt"]
+[ext_resource type="FontFile" uid="uid://bwdtnm6evwpkl" path="res://Fonts/vhs-vcr-osd.ttf" id="1_tmo6k"]
+[ext_resource type="Texture2D" uid="uid://dhykny1p5wgtr" path="res://Logos/NameLogoLarge.png" id="3_oeaet"]
+
+[node name="ProjectBox" type="Control" unique_id=1667972201]
+custom_minimum_size = Vector2(265, 450)
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_hk7rt")
+titleText = "PROJECT"
+titleSize = 35
+projectImage = ExtResource("3_oeaet")
+description = "can't decide what game to play with friends?
+no problem.
+
+in DRIFTERS each character plays like a different genre. putting shooters, fighters, soulslike and strategy all on the same stage.
+now everyone can play the genre of game they prefer"
+
+[node name="Back" type="Control" parent="." unique_id=1158329730]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Outline" type="ColorRect" parent="Back" unique_id=672894227]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="ColorRect" parent="Back" unique_id=1384549621]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Titel" type="Label" parent="." unique_id=1537733583]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.5
+offset_top = 5.0
+offset_right = 127.5
+offset_bottom = 62.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_tmo6k")
+theme_override_font_sizes/font_size = 35
+text = "PROJECT"
+horizontal_alignment = 1
+clip_text = true
+uppercase = true
+
+[node name="ProjIcon" type="TextureRect" parent="." unique_id=1485919379]
+custom_maximum_size = Vector2(245, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -119.5
+offset_top = 55.0
+offset_right = 120.5
+offset_bottom = 135.0
+grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 0)
+texture = ExtResource("3_oeaet")
+stretch_mode = 5
+
+[node name="Status" type="Label" parent="." unique_id=1761930681]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -122.5
+offset_top = -35.0
+offset_right = 2.5
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_tmo6k")
+theme_override_font_sizes/font_size = 20
+text = "STATUS >"
+clip_text = true
+uppercase = true
+
+[node name="StatusDisplay" type="Label" parent="." unique_id=750419583]
+modulate = Color(0.19607843, 0.8039216, 0.19607843, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -127.5
+offset_top = -35.0
+offset_right = 127.5
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_tmo6k")
+theme_override_font_sizes/font_size = 20
+text = "ACTIVE"
+horizontal_alignment = 2
+clip_text = true
+uppercase = true
+
+[node name="Description" type="Label" parent="." unique_id=2121471330]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(255, 225)
+custom_maximum_size = Vector2(255, 225)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.5
+offset_top = 162.0
+offset_right = 127.5
+offset_bottom = 387.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = -21
+theme_override_fonts/font = ExtResource("1_tmo6k")
+theme_override_font_sizes/font_size = 13
+text = "can't decide what game to play with friends?
+no problem.
+
+in DRIFTERS each character plays like a different genre. putting shooters, fighters, soulslike and strategy all on the same stage.
+now everyone can play the genre of game they prefer"
+horizontal_alignment = 1
+autowrap_mode = 3
+clip_text = true
