@@ -362,7 +362,7 @@ theme_override_constants/line_spacing = -23
 theme_override_fonts/font = ExtResource("9_x6x8t")
 text = "I started with game development in 2018 with Unity, originaly in 2D I quickly moved to 3D and then VR making all sorts of projects. In 2022 I started at SintLucas in their game development course and learned more about general programming and Unity.
 
-Additionaly I'm also interested in mechanical or technology stuff like cars, computers, weapons and I have of course played a lot of games, my favourite being Shadow of the colossus."
+Additionaly I'm also interested in mechanical or technology stuff like cars, computers, weapons, robotics and I have of course played a lot of games, my favorite being Shadow of the colossus."
 autowrap_mode = 3
 
 [node name="Company" type="Control" parent="UI/Menus/AboutMenu/VBoxContainer" unique_id=1198556793]
