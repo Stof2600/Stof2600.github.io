@@ -455,36 +455,32 @@ description = "tool being made for the DRIFTERS project making character modelin
 
 select body part, facial features, clothes and edit textures directly to create characters quickly for games, art, animation or anything else."
 
-[node name="HLSLProject" parent="UI/Menus/ProjectMenu/ScrollContainer/VBoxContainer" unique_id=86541020 instance=ExtResource("8_h6qgc")]
+[node name="ShaderProject" parent="UI/Menus/ProjectMenu/ScrollContainer/VBoxContainer" unique_id=1686781053 instance=ExtResource("8_h6qgc")]
 layout_mode = 2
-titleText = "HLSL TEST"
+titleText = "HLSL DEMO"
 status = 2
 projectImage = ExtResource("11_q8kmj")
 description = "a simple project I did to try out Unity HLSL shaders.
 
-made a simple water shader, swaying grass and sand that leaves an imprint when walked over by the player. with all calculations done on the GPU for optimal performance.
+made a simple water shader, swaying grass and sand that leaves an imprint when walked over by the player. with all calculations done on the GPU for optimal performance."
 
-"
-
-[node name="OvertureProject" parent="UI/Menus/ProjectMenu/ScrollContainer/VBoxContainer" unique_id=1009603736 instance=ExtResource("8_h6qgc")]
+[node name="OvertureProject" parent="UI/Menus/ProjectMenu/ScrollContainer/VBoxContainer" unique_id=1486904060 instance=ExtResource("8_h6qgc")]
 layout_mode = 2
 titleText = "ENCORE OVERTURE"
 titleSize = 22
 status = 1
 projectImage = ExtResource("12_lu501")
 description = "ENCORE OVERTURE is both a strategy game and a 3D fighting game designed by my younger brother and similar to Guilty Gear 2.
-the player has to move their soldiers around on the map to claim control points and fight with their own character to defeat enemy soldiers or other players.
+the player has to move their soldiers around on the map to claim control points and fight with their own character to defeat enemy soldiers or other players."
 
-"
-
-[node name="VRDemoProject" parent="UI/Menus/ProjectMenu/ScrollContainer/VBoxContainer" unique_id=1450324992 instance=ExtResource("8_h6qgc")]
+[node name="VRDemoProject" parent="UI/Menus/ProjectMenu/ScrollContainer/VBoxContainer" unique_id=1841197110 instance=ExtResource("8_h6qgc")]
 layout_mode = 2
 titleText = "VR DEMO"
 status = 3
 projectImage = ExtResource("13_uaysb")
 description = "my first major project, it didn't have a focus and was mostly just to try making different things, all in VR.
 
-it hade guns, climbing, enemies and vehicles but without a goal it became pointless."
+it hade guns, climbing, enemies and vehicles but without a goal it became endless so I stopped."
 
 [node name="ContactMenu" type="Control" parent="UI/Menus" unique_id=1454206741]
 visible = false
