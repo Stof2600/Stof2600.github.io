@@ -6,6 +6,7 @@
 
 [node name="ProjectBox" type="Control" unique_id=1667972201]
 custom_minimum_size = Vector2(265, 450)
+custom_maximum_size = Vector2(265, 450)
 layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 3
